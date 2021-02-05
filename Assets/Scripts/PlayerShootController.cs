@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerShootController : MonoBehaviour
 {
+    [SerializeField] private PlayerScriptableObject _playerScriptableObject;
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Vector3 _offsetFirePoint;
     [SerializeField] private AudioClip _fireSound;
@@ -13,10 +14,9 @@ public class PlayerShootController : MonoBehaviour
     private float _fireRate;
     private float _nextFire;
 
-    public float FireRate { get { return _fireRate; } set { _fireRate = value; } }
     void Start()
     {
-        
+        _fireRate = _playerScriptableObject.PlayerFireRate;
     }
 
 

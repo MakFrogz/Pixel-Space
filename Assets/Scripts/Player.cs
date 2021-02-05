@@ -33,10 +33,6 @@ public class Player : MonoBehaviour
         _playerHealthController = GetComponent<PlayerHealthController>();
         _playerEnergyController = GetComponent<PlayerEnergyController>();
 
-        _playerShootController.FireRate = _playerScriptableObject.PlayerFireRate;
-        _playerHealthController.MaxHealth = _playerScriptableObject.PlayerHealth;
-        _playerEnergyController.MaxEnergy = _playerScriptableObject.PlayerEnergy;
-
         _speed = _playerScriptableObject.PlayerSpeed;
         _canDodge = true;
 

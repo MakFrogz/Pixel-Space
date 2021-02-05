@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHealthController : MonoBehaviour
 {
+    [SerializeField] private PlayerScriptableObject _playerScriptableObject;
     [SerializeField] private GameObject _shield;
     [SerializeField] private GameObject _explosionPrefab;
 
@@ -12,10 +13,10 @@ public class PlayerHealthController : MonoBehaviour
     private bool _isShieldActive;
     private bool _isInvulnerable;
     public bool IsInvulnerable { get; set; }
-    public float MaxHealth { get { return _maxHealth; } set { _maxHealth = value; } }
-    public float CurrentHealth { get { return _currentHealth; } set { _currentHealth = value; } }
+
     void Start()
     {
+        _maxHealth = _playerScriptableObject.PlayerHealth;
         _currentHealth = _maxHealth;
         _isInvulnerable = false;
         UIManager.Instance.SetMaxHealthBar(_maxHealth);

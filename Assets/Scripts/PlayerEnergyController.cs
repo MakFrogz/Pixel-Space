@@ -5,12 +5,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerEnergyController : MonoBehaviour
 {
+    [SerializeField] private PlayerScriptableObject _playerScriptableObject;
     [SerializeField] private float _energyRestoreTime;
 
     private float _maxEnergy;
     private float _currentEnergy;
 
-    public float MaxEnergy { get { return _maxEnergy; } set { _maxEnergy = value; } }
     public float CurrentEnergy { 
         get 
         { 
@@ -24,6 +24,7 @@ public class PlayerEnergyController : MonoBehaviour
     }
     void Start()
     {
+        _maxEnergy = _playerScriptableObject.PlayerEnergy;
         _currentEnergy = _maxEnergy;
         UIManager.Instance.SetMaxEnergyBar(_maxEnergy);
         UIManager.Instance.UpdateEnergyBar(_currentEnergy);
