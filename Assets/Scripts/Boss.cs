@@ -12,7 +12,6 @@ public abstract class Boss : MonoBehaviour
     [SerializeField] protected GameObject _bulletPrefab;
     [SerializeField] protected Vector3 _startPosition;
 
-    protected GameManager _gameManager;
     protected bool _isAlive;
     protected bool _canMove;
 
@@ -20,11 +19,6 @@ public abstract class Boss : MonoBehaviour
     {
         _isAlive = true;
         _canMove = false;
-        _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        if (_gameManager == null)
-        {
-            Debug.LogError("Enemy game manager is NULL!");
-        }
     }
 
     protected void MoveToStartPosition()
@@ -64,9 +58,9 @@ public abstract class Boss : MonoBehaviour
                 Destroy(other.gameObject);
                 if(_health <= 0)
                 {
-                    if (_gameManager != null)
+                    if (GameManager.Instance != null)
                     {
-                        _gameManager.AddScore(1000);
+                        GameManager.Instance.AddScore(1000);
                         OnDeath();
                     }
                 }
@@ -76,8 +70,8 @@ public abstract class Boss : MonoBehaviour
     private void OnDeath()
     {
         _isAlive = false;
-        SpawnManager.Instance.StartSpawn();
-        Instantiate(_explosionPrefab, transform.position, Quaternion.identity).transform.localScale = new Vector3(2f,2f,2f) ;
+        GameManager.Instance.OnBossDeath();
+        Instantiate(_explosionPrefab, transform.position, Quaternion.identity).transform.localScale = new Vector3(1.5f,1.5f,1.5f) ;
         Destroy(gameObject);
     }
 }
