@@ -5,10 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Player", menuName = "Create Player/Player")]
 public class PlayerScriptableObject : ScriptableObject
 {
-    public float PlayerHealth;
-    public float PlayerEnergy;
-    public float PlayerSpeed;
-    public float PlayerFireRate;
+    public float Health;
+    public float Energy;
+    public float EnergyRestoreTime;
+    public float Speed;
+    public float FireRate;
     public float DodgeMultiplySpeed;
     public float DodgeCost;
 }

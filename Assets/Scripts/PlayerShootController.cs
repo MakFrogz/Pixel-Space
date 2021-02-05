@@ -16,7 +16,7 @@ public class PlayerShootController : MonoBehaviour
 
     void Start()
     {
-        _fireRate = _playerScriptableObject.PlayerFireRate;
+        _fireRate = _playerScriptableObject.FireRate;
     }
 
 

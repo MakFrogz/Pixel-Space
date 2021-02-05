@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         _playerHealthController = GetComponent<PlayerHealthController>();
         _playerEnergyController = GetComponent<PlayerEnergyController>();
 
-        _speed = _playerScriptableObject.PlayerSpeed;
+        _speed = _playerScriptableObject.Speed;
         _canDodge = true;
 
         _trailRenderer.emitting = false;

@@ -29,7 +29,7 @@ public class EnemyMedium : Enemy, IAttack
 
     protected override void Move()
     {
-        transform.Translate(_direction.normalized * _enemyScriptableObject.EnemySpeed * Time.fixedDeltaTime);
+        transform.Translate(_direction.normalized * _enemyScriptableObject.Speed * Time.fixedDeltaTime);
     }
     public void Attack()
     {
@@ -45,7 +45,7 @@ public class EnemyMedium : Enemy, IAttack
 
         if (Time.time > _nextFire)
         {
-            _nextFire = Time.time + _enemyScriptableObject.EnemyFireRate;
+            _nextFire = Time.time + _enemyScriptableObject.FireRate;
             Instantiate(_enemyScriptableObject.BulletPrefab, _firePoint.position, Quaternion.identity);
         }
     }

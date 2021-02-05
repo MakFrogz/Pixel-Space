@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca099056ffb13f44fb072d52ac5a1bda, type: 3}
   m_Name: Enemy_big
   m_EditorClassIdentifier: 
-  EnemySpeed: 3
-  EnemyFireRate: 2
-  EnemyHealth: 0
-  EnemyCollisionDamage: 20
-  EnemyPointReward: 200
+  Speed: 3
+  FireRate: 1
+  Health: 200
+  CollisionDamage: 20
+  PointReward: 200
   BulletPrefab: {fileID: 7894325551798927938, guid: 37cbfb0440709b24f948698d0bac23d1, type: 3}
   ExplosionPrefab: {fileID: 8925422334815634955, guid: 02dc5c1fc65725f4a92ed6d868d66c3d, type: 3}
   BoostDropChance: 15

@@ -27,7 +27,7 @@ public abstract class Enemy : MonoBehaviour
             Player player = other.GetComponent<Player>();
             if (player != null)
             {
-                player.GetComponent<PlayerHealthController>().ApplyDamage(_enemyScriptableObject.EnemyCollisionDamage);
+                player.GetComponent<PlayerHealthController>().ApplyDamage(_enemyScriptableObject.CollisionDamage);
                 OnDeath();
             }
         }
@@ -37,7 +37,7 @@ public abstract class Enemy : MonoBehaviour
             Destroy(other.gameObject);
             if (GameManager.Instance != null)
             {
-                GameManager.Instance.AddScore(_enemyScriptableObject.EnemyPointReward);
+                GameManager.Instance.AddScore(_enemyScriptableObject.PointReward);
                 OnDrop();
                 OnDeath();
             }

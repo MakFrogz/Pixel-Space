@@ -21,7 +21,7 @@ public class EnemyBig : Enemy, IAttack
 
     protected override void Move()
     {
-        transform.Translate(Vector3.down * _enemyScriptableObject.EnemySpeed * Time.fixedDeltaTime);
+        transform.Translate(Vector3.down * _enemyScriptableObject.Speed * Time.fixedDeltaTime);
     }
 
     public void Attack()
@@ -39,7 +39,7 @@ public class EnemyBig : Enemy, IAttack
 
         if(Time.time > _nextFire)
         {
-            _nextFire = Time.time + _enemyScriptableObject.EnemyFireRate;
+            _nextFire = Time.time + _enemyScriptableObject.FireRate;
             Vector3 target = _player == null ? Vector3.down : _player.transform.position;
             Instantiate(_enemyScriptableObject.BulletPrefab, transform.position, Quaternion.LookRotation(Vector3.forward, transform.position - target));
         }

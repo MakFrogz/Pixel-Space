@@ -24,7 +24,7 @@ public class PlayerEnergyController : MonoBehaviour
     }
     void Start()
     {
-        _maxEnergy = _playerScriptableObject.PlayerEnergy;
+        _maxEnergy = _playerScriptableObject.Energy;
         _currentEnergy = _maxEnergy;
         UIManager.Instance.SetMaxEnergyBar(_maxEnergy);
         UIManager.Instance.UpdateEnergyBar(_currentEnergy);

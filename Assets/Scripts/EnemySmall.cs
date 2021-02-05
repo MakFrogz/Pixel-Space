@@ -11,7 +11,7 @@ public class EnemySmall : Enemy
 
     protected override void Move()
     {
-        transform.Translate(Vector3.down * _enemyScriptableObject.EnemySpeed * Time.fixedDeltaTime);
+        transform.Translate(Vector3.down * _enemyScriptableObject.Speed * Time.fixedDeltaTime);
     }
 
 }

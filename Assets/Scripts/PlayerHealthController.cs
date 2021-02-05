@@ -16,7 +16,7 @@ public class PlayerHealthController : MonoBehaviour
 
     void Start()
     {
-        _maxHealth = _playerScriptableObject.PlayerHealth;
+        _maxHealth = _playerScriptableObject.Health;
         _currentHealth = _maxHealth;
         _isInvulnerable = false;
         UIManager.Instance.SetMaxHealthBar(_maxHealth);
