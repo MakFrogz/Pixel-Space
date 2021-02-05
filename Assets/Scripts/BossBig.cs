@@ -5,15 +5,14 @@ using UnityEngine;
 public class BossBig : Boss, IAttack
 {
     [SerializeField] private int _projectilesNum;
-    [SerializeField] private float _massiveAttackCoolDown;
-    [SerializeField] private float _laserAttackCoolDown;
     [SerializeField] private GameObject _laser;
 
+    private GameObject _player;
+    
     private float _nextFire;
-    private GameObject[] _players;
-
-    private float xBounds;
-    private int direction;
+    private float _xBounds;
+    private int _direction;
+    private float _speed;
 
     private bool _canMassiveAttack;
     private bool _canLaserAttack;
@@ -23,15 +22,10 @@ public class BossBig : Boss, IAttack
     {
         base.Start();
         _laser.SetActive(false);
-        _players = GameObject.FindGameObjectsWithTag("Player");
-        //xBounds = Background.Instance.GetBackgroundWidth() - (GetComponent<SpriteRenderer>().bounds.size.x / 2);
-        xBounds = Background.Instance.GetBackgroundWidth();
-        direction = 1;
-        /*_canSingleAttack = true;
-        _canMassiveAttack = false;
-        _canLaserAttack = false;
-        StartCoroutine("MassiveAttackCoolDown");
-        StartCoroutine("LaserAttackCoolDown");*/
+        _player = GameObject.FindGameObjectWithTag("Player");
+        _xBounds = Background.Instance.GetBackgroundWidth();
+        _direction = 1;
+        _speed = _bossScriptableObject.Speed;
         StartCoroutine("AttacksRoutine");
     }
 
@@ -55,19 +49,19 @@ public class BossBig : Boss, IAttack
 
     private void MovementDirection()
     {
-        if(transform.position.x > xBounds)
+        if(transform.position.x > _xBounds)
         {
-            direction = -1;
-        }else if (transform.position.x < -xBounds)
+            _direction = -1;
+        }else if (transform.position.x < -_xBounds)
         {
-            direction = 1;
+            _direction = 1;
         }
     }
 
     protected override void Move()
     {
 
-        transform.Translate(Vector3.right * _speed * Time.fixedDeltaTime * direction);
+        transform.Translate(Vector3.right * _speed * Time.fixedDeltaTime * _direction);
     }
 
     public void Attack()
@@ -84,13 +78,8 @@ public class BossBig : Boss, IAttack
 
         if (Time.time > _nextFire)
         {
-            _nextFire = Time.time + _fireRate;
-            int playerIndex = 0;
-            if (_players.Length > 1)
-            {
-                playerIndex = Random.Range(0, _players.Length);
-            }
-            Vector3 target = _players[playerIndex] == null ? Vector3.down : _players[playerIndex].transform.position;
+            _nextFire = Time.time + _bossScriptableObject.FireRate;
+            Vector3 target = _player == null ? Vector3.down : _player.transform.position;
             Instantiate(_bulletPrefab, transform.position, Quaternion.LookRotation(Vector3.forward, transform.position - target));
         }
     }
@@ -121,14 +110,7 @@ public class BossBig : Boss, IAttack
         yield return new WaitForSeconds(1f);
         _speed = 5f;
         _canSingleAttack = true;
-        //StartCoroutine("MassiveAttackCoolDown");
     }
-
-    /*private IEnumerator MassiveAttackCoolDown()
-    {
-        yield return new WaitForSeconds(_massiveAttackCoolDown);
-        _canMassiveAttack = true;
-    }*/
 
     private void LaserAttack()
     {
@@ -151,15 +133,7 @@ public class BossBig : Boss, IAttack
         _laser.SetActive(false);
         _canSingleAttack = true;
         _speed /= 2f;
-        //StartCoroutine("LaserAttackCoolDown");
     }
-
-   /* private IEnumerator LaserAttackCoolDown()
-    {
-        yield return new WaitForSeconds(_laserAttackCoolDown);
-        _canLaserAttack = true;
-    }*/
-
 
     private IEnumerator AttacksRoutine()
     {
