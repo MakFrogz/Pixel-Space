@@ -109,7 +109,8 @@ public class SpawnManager : MonoBehaviour
     {
         _canSpawnEnemies = false;
         _canSpawnAsteroids = false;
-        Instantiate(GetRandomBoss()).transform.position = _spawnPoint.position;
+        GameObject boss = Instantiate(GetRandomBoss());
+        boss.transform.position = _spawnPoint.position;
     }
 
     private GameObject GetRandomBoss()
@@ -150,7 +151,7 @@ public class SpawnManager : MonoBehaviour
         _spawnEnemyRate = _spawnEnemyRateFromScore.Evaluate(score);
     }
 
-    public void StartSpawn()
+    public void ContinueSpawn()
     {
         _canSpawnEnemies = true;
         _canSpawnAsteroids = true;

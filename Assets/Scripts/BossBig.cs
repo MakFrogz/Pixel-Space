@@ -72,7 +72,7 @@ public class BossBig : Boss, IAttack
 
     public void Attack()
     {
-        if (_gameManager.IsGameOver)
+        if (GameManager.Instance.IsGameOver)
         {
             return;
         }

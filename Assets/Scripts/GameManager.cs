@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject _pausePanel;
     public int Score { get; set; }
+    public int DestroyedEnemiesCount { get; set; }
+
     private UIManager _uiManager;
 
     public GameManagerInput _inputActions;
@@ -27,14 +29,6 @@ public class GameManager : MonoBehaviour
         _uiManager = GameObject.Find("UI Manager").GetComponent<UIManager>();
         _inputActions.Gamemanager.Restart.performed += ctx => OnRestart();
         _inputActions.Gamemanager.Pause.performed += ctx => OnPause();
-    }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            _pausePanel.SetActive(true);
-            Time.timeScale = 0f;
-        }
     }
 
     public void OnPause()
@@ -75,6 +69,11 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+    }
+
+    public void OnBossDeath()
+    {
+        SpawnManager.Instance.ContinueSpawn();
     }
 
 
