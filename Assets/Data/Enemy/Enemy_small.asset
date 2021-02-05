@@ -19,4 +19,4 @@ MonoBehaviour:
   EnemyPointReward: 50
   BulletPrefab: {fileID: 0}
   ExplosionPrefab: {fileID: 8925422334815634955, guid: 02dc5c1fc65725f4a92ed6d868d66c3d, type: 3}
-  BoostDropChance: 90
+  BoostDropChance: 5

@@ -330,14 +330,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2adeb6b3b7a5d488658da411a04cd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 20
-  _speed: 5
-  _fireRate: 1
-  _health: 50
+  _bossScriptableObject: {fileID: 11400000, guid: ca6d794d1dced16428e602ef2f547db9, type: 2}
   _explosionPrefab: {fileID: 8925422334815634955, guid: 02dc5c1fc65725f4a92ed6d868d66c3d, type: 3}
   _bulletPrefab: {fileID: 7894325551798927938, guid: 37cbfb0440709b24f948698d0bac23d1, type: 3}
   _startPosition: {x: 0, y: 5, z: 0}
+  _boostPrefab: {fileID: 5230087772860035777, guid: ffef866b4cd919346a1c4f08f4b65c5f, type: 3}
   _projectilesNum: 30
-  _massiveAttackCoolDown: 5
-  _laserAttackCoolDown: 10
   _laser: {fileID: 1147306840557021649}

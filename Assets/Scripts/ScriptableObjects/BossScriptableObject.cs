@@ -9,4 +9,6 @@ public class BossScriptableObject : ScriptableObject
     public float Speed;
     public float FireRate;
     public float Health;
+    public GameObject ExplosionPrefab;
+    public GameObject BulletPrefab;
 }

@@ -80,7 +80,7 @@ public class BossBig : Boss, IAttack
         {
             _nextFire = Time.time + _bossScriptableObject.FireRate;
             Vector3 target = _player == null ? Vector3.down : _player.transform.position;
-            Instantiate(_bulletPrefab, transform.position, Quaternion.LookRotation(Vector3.forward, transform.position - target));
+            Instantiate(_bossScriptableObject.BulletPrefab, transform.position, Quaternion.LookRotation(Vector3.forward, transform.position - target));
         }
     }
 
@@ -104,7 +104,7 @@ public class BossBig : Boss, IAttack
             yield return new WaitForSeconds(0.5f);
             for (int i = 0; i < _projectilesNum; i++)
             {
-                Instantiate(_bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0f, 0f, step * i)));
+                Instantiate(_bossScriptableObject.BulletPrefab, transform.position, Quaternion.Euler(new Vector3(0f, 0f, step * i)));
             }
         }
         yield return new WaitForSeconds(1f);

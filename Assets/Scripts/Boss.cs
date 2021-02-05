@@ -5,8 +5,6 @@ using UnityEngine;
 public abstract class Boss : MonoBehaviour
 {
     [SerializeField] protected BossScriptableObject _bossScriptableObject;
-    [SerializeField] protected GameObject _explosionPrefab;
-    [SerializeField] protected GameObject _bulletPrefab;
     [SerializeField] protected Vector3 _startPosition;
     [SerializeField] protected GameObject _boostPrefab;
 
@@ -72,7 +70,7 @@ public abstract class Boss : MonoBehaviour
     {
         _isAlive = false;
         GameManager.Instance.OnBossDeath();
-        Instantiate(_explosionPrefab, transform.position, Quaternion.identity).transform.localScale = new Vector3(1.5f,1.5f,1.5f) ;
+        Instantiate(_bossScriptableObject.ExplosionPrefab, transform.position, Quaternion.identity).transform.localScale = new Vector3(1.5f,1.5f,1.5f) ;
         Destroy(gameObject);
     }
 
