@@ -8,11 +8,9 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected GameObject _boostPrefab;
 
     protected SpriteRenderer _spriteRenderer;
-    protected GameManager _gameManager;
 
     protected void Start()
     {
-        _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
         float x = Background.Instance.GetBackgroundWidth() - (_spriteRenderer.bounds.size.x / 2);
@@ -37,9 +35,9 @@ public abstract class Enemy : MonoBehaviour
         if (other.tag == "PlayerBullet")
         {
             Destroy(other.gameObject);
-            if (_gameManager != null)
+            if (GameManager.Instance != null)
             {
-                _gameManager.AddScore(_enemyScriptableObject.EnemyPointReward);
+                GameManager.Instance.AddScore(_enemyScriptableObject.EnemyPointReward);
                 OnDrop();
                 OnDeath();
             }

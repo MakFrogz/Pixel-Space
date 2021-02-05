@@ -5,12 +5,12 @@ using UnityEngine;
 public class EnemyBig : Enemy, IAttack
 {
     private float _nextFire;
-    private GameObject[] _players;
+    private GameObject _player;
 
     new void Start()
     {
         base.Start();
-        _players = GameObject.FindGameObjectsWithTag("Player");
+        _player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void FixedUpdate()
@@ -32,7 +32,7 @@ public class EnemyBig : Enemy, IAttack
             return;
         }
 
-        if (_gameManager.IsGameOver)
+        if (GameManager.Instance.IsGameOver)
         {
             return;
         }
@@ -40,12 +40,7 @@ public class EnemyBig : Enemy, IAttack
         if(Time.time > _nextFire)
         {
             _nextFire = Time.time + _enemyScriptableObject.EnemyFireRate;
-            int playerIndex = 0;
-            if(_players.Length > 1)
-            {
-                playerIndex = Random.Range(0, _players.Length);
-            }
-            Vector3 target = _players[playerIndex] == null ? Vector3.down : _players[playerIndex].transform.position;
+            Vector3 target = _player == null ? Vector3.down : _player.transform.position;
             Instantiate(_enemyScriptableObject.BulletPrefab, transform.position, Quaternion.LookRotation(Vector3.forward, transform.position - target));
         }
     }
