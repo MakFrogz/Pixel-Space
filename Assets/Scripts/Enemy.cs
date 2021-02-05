@@ -53,6 +53,7 @@ public abstract class Enemy : MonoBehaviour
 
     private void OnDeath()
     {
+        GameManager.Instance.DestroyedEnemiesCount++;
         Instantiate(_enemyScriptableObject.ExplosionPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

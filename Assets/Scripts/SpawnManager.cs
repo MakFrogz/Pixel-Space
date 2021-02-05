@@ -27,7 +27,8 @@ public class SpawnManager : MonoBehaviour
     [Header("Boss Settings")]
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private GameObject[] _bossPrefabs;
-    [SerializeField] private int _bossSpawnCountEnemies;
+    [SerializeField] private int _destroyedEnemiesNumberForSpawnBoss;
+    [SerializeField] private int _stepDestroyedEnemiesNumberForNextPawnBoss;
 
 
     private float _spawnEnemyRate;
@@ -58,18 +59,16 @@ public class SpawnManager : MonoBehaviour
 
     private IEnumerator SpawnEnemies()
     {
-        int enemyCount = 0;
         while (!GameManager.Instance.IsGameOver)
         {
             if (_canSpawnEnemies)
             {
                 GameObject newEnemy = Instantiate(GetRandomEnemy());
                 newEnemy.transform.SetParent(_objectsContainer.transform, false);
-                enemyCount++;
-                if(enemyCount >= _bossSpawnCountEnemies)
+                if(GameManager.Instance.DestroyedEnemiesCount >= _destroyedEnemiesNumberForSpawnBoss)
                 {
-                    _bossSpawnCountEnemies += 5;
-                    enemyCount = 0;
+                    _destroyedEnemiesNumberForSpawnBoss += _stepDestroyedEnemiesNumberForNextPawnBoss;
+                    GameManager.Instance.DestroyedEnemiesCount = 0;
                     yield return new WaitForSeconds(_delayBetweenEvents);
                     SpawnBoss();
                 }
@@ -151,8 +150,9 @@ public class SpawnManager : MonoBehaviour
         _spawnEnemyRate = _spawnEnemyRateFromScore.Evaluate(score);
     }
 
-    public void ContinueSpawn()
+    public IEnumerator ContinueSpawn()
     {
+        yield return new WaitForSeconds(_delayBetweenEvents);
         _canSpawnEnemies = true;
         _canSpawnAsteroids = true;
     }

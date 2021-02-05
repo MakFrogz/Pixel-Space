@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
 
     public void OnBossDeath()
     {
-        SpawnManager.Instance.ContinueSpawn();
+        StartCoroutine(SpawnManager.Instance.ContinueSpawn());
     }
 
 
