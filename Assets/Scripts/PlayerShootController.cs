@@ -6,7 +6,7 @@ public class PlayerShootController : MonoBehaviour
 {
     [SerializeField] private PlayerScriptableObject _playerScriptableObject;
     [SerializeField] private GameObject _bulletPrefab;
-    [SerializeField] private Vector3 _offsetFirePoint;
+    [SerializeField] private Transform _firePoint;
     [SerializeField] private AudioClip _fireSound;
     [SerializeField] private int _numProjectile;
     [SerializeField] private float _angleStep;
@@ -41,7 +41,7 @@ public class PlayerShootController : MonoBehaviour
                 continue;
             }
             Quaternion target = Quaternion.AngleAxis(i * _angleStep, transform.forward);
-            Instantiate(_bulletPrefab, transform.position + _offsetFirePoint, target);
+            Instantiate(_bulletPrefab, _firePoint.position , target);
         }
         AudioManager.Instance.PlaySFX(_fireSound);
     }

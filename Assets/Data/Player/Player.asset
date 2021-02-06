@@ -19,3 +19,7 @@ MonoBehaviour:
   FireRate: 0.5
   DodgeMultiplySpeed: 5
   DodgeCost: 30
+  MaxEnergyRestoreTime: 0.5
+  MaxSpeed: 10
+  MaxFireRate: 0.2
+  MaxProjectiles: 7

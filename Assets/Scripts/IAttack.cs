@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IAttack
 {
+    Transform FirePoint { get; set; }
     void Attack();
 }

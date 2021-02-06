@@ -6,6 +6,8 @@ public class BossBig : Boss, IAttack
 {
     [SerializeField] private int _projectilesNum;
     [SerializeField] private GameObject _laser;
+    [SerializeField] private Transform _firePoint;
+    public Transform FirePoint { get { return _firePoint; } set { _firePoint = value; } }
 
     private GameObject _player;
     
@@ -17,6 +19,7 @@ public class BossBig : Boss, IAttack
     private bool _canMassiveAttack;
     private bool _canLaserAttack;
     private bool _canSingleAttack;
+
 
     new void Start()
     {
@@ -80,7 +83,7 @@ public class BossBig : Boss, IAttack
         {
             _nextFire = Time.time + _bossScriptableObject.FireRate;
             Vector3 target = _player == null ? Vector3.down : _player.transform.position;
-            Instantiate(_bossScriptableObject.BulletPrefab, transform.position, Quaternion.LookRotation(Vector3.forward, transform.position - target));
+            Instantiate(_bossScriptableObject.BulletPrefab, FirePoint.position, Quaternion.LookRotation(Vector3.forward, transform.position - target));
         }
     }
 
