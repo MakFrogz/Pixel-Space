@@ -25,7 +25,7 @@ public class PowerUp : MonoBehaviour
             {
                 switch (boostIndex) {
                     case 0:
-                        player.SpeedBoostActive();
+                        player.SpeedBoostActive(_boostScriptableObject.SpeedUp);
                         break;
                     case 1:
                         player.GetComponent<PlayerHealthController>().ShieldActive();
