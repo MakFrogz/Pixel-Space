@@ -70,7 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5977376026475086696}
   m_Layer: 0
-  m_Name: Enemy Container
+  m_Name: Objects Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,29 +136,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490f570c6f29af24c805cc6ff34f65df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _objectsContainer: {fileID: 5977376026475086699}
+  _delayBetweenEvents: 3
   _enemiesPrefabs:
   - {fileID: 2068815452389899767, guid: 6ae31a7943a5f6a458df11900861bb97, type: 3}
   - {fileID: 3334192403185249777, guid: d0c932a8c3601b346b707ba324493262, type: 3}
   - {fileID: 4544249906767242876, guid: a148fc80c6697e841b74520dea558852, type: 3}
-  _enemyContainer: {fileID: 5977376026475086699}
-  _spawnEnemyRate: 1
   _spawnEnemyRateFromScore:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: -0.000089999994
-      outSlope: -0.000089999994
+      inSlope: -0.000023333332
+      outSlope: -0.000023333332
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 10000
-      value: 0.1
-      inSlope: -0.000089999994
-      outSlope: -0.000089999994
+      time: 30000
+      value: 0.3
+      inSlope: -0.000023333332
+      outSlope: -0.000023333332
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -175,9 +175,13 @@ MonoBehaviour:
   - {fileID: 3922055961824767988, guid: a5063485e9ceb614eb8fe0cb816a0233, type: 3}
   - {fileID: 1035589443549414813, guid: b3ee43481e7da934b8afcea4f675f857, type: 3}
   - {fileID: 5918198891805554936, guid: 260675a5beae0e54ba71d4a1e5f81403, type: 3}
-  _timeBetweenAsteroids: 0.1
-  _boostPrefab: {fileID: 5230087772860035777, guid: ffef866b4cd919346a1c4f08f4b65c5f, type: 3}
+  _minAsteroidsNumber: 20
+  _maxAsteroidsNumber: 40
+  _minSpawnAsteroidsTime: 60
+  _maxSpawnAsteroidsTime: 180
+  _timeBetweenAsteroids: 0.3
   _spawnPoint: {fileID: 5977376026385074773}
   _bossPrefabs:
   - {fileID: 1147306840801887009, guid: dba2f25c546cb714e9c0f2c8d27445c3, type: 3}
-  _bossSpawnTime: 30
+  _destroyedEnemiesNumberForSpawnBoss: 50
+  _stepDestroyedEnemiesNumberForNextPawnBoss: 5

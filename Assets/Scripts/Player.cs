@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
     private Vector3 _direction;
     private bool _canDodge;
 
-    private PlayerShootController _playerShootController;
     private PlayerHealthController _playerHealthController;
     private PlayerEnergyController _playerEnergyController;
 
@@ -29,7 +28,6 @@ public class Player : MonoBehaviour
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
-        _playerShootController = GetComponent<PlayerShootController>();
         _playerHealthController = GetComponent<PlayerHealthController>();
         _playerEnergyController = GetComponent<PlayerEnergyController>();
 

@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyScriptableObject: {fileID: 11400000, guid: 731e51d1a99d97949bbec89121609186, type: 2}
   _boostPrefab: {fileID: 5230087772860035777, guid: ffef866b4cd919346a1c4f08f4b65c5f, type: 3}
-  _firePoint: {fileID: 0}
+  _firePoint: {fileID: 191449087}
 --- !u!95 &3342440346014728194
 Animator:
   serializedVersion: 3

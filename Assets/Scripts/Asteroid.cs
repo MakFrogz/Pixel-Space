@@ -9,9 +9,10 @@ public class Asteroid : MonoBehaviour
 
     void Start()
     {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         _speed = Random.Range(5,11);
-        float x = Background.Instance.GetBackgroundWidth() - (GetComponent<SpriteRenderer>().bounds.size.x / 2);
-        float y = Background.Instance.GetBackgroundHeigth() + (GetComponent<SpriteRenderer>().bounds.size.y / 2);
+        float x = Background.Instance.GetBackgroundWidth() - (spriteRenderer.bounds.size.x / 2);
+        float y = Background.Instance.GetBackgroundHeigth() + (spriteRenderer.bounds.size.y / 2);
         transform.position = new Vector3(Random.Range(-x, x), y, 0f);
     }
 

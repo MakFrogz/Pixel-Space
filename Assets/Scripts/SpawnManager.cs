@@ -28,7 +28,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private GameObject[] _bossPrefabs;
     [SerializeField] private int _destroyedEnemiesNumberForSpawnBoss;
-    [SerializeField] private int _stepDestroyedEnemiesNumberForNextPawnBoss;
+    [SerializeField] private int _stepDestroyedEnemiesNumberForNextSpawnBoss;
 
 
     private float _spawnEnemyRate;
@@ -67,7 +67,7 @@ public class SpawnManager : MonoBehaviour
                 newEnemy.transform.SetParent(_objectsContainer.transform, false);
                 if(GameManager.Instance.DestroyedEnemiesCount >= _destroyedEnemiesNumberForSpawnBoss)
                 {
-                    _destroyedEnemiesNumberForSpawnBoss += _stepDestroyedEnemiesNumberForNextPawnBoss;
+                    _destroyedEnemiesNumberForSpawnBoss += _stepDestroyedEnemiesNumberForNextSpawnBoss;
                     GameManager.Instance.DestroyedEnemiesCount = 0;
                     yield return new WaitForSeconds(_delayBetweenEvents);
                     SpawnBoss();
