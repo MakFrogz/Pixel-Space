@@ -155,6 +155,5 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitForSeconds(_delayBetweenEvents);
         _canSpawnEnemies = true;
         _canSpawnAsteroids = true;
-        _nextSpawnAsteroidsTime = Time.time + Random.Range(_minSpawnAsteroidsTime, _maxSpawnAsteroidsTime);
     }
 }

@@ -742,7 +742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: _destroyedEnemiesNumberForSpawnBoss
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: _stepDestroyedEnemiesNumberForNextPawnBoss

@@ -16,10 +16,10 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        if(transform.parent != null)
+        /*if(transform.parent != null)
         {
             Destroy(transform.parent.gameObject);
-        }
+        }*/
         Destroy(gameObject);
     }
 }

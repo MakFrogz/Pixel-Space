@@ -7,12 +7,13 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected EnemyScriptableObject _enemyScriptableObject;
     [SerializeField] protected GameObject _boostPrefab;
 
+    protected float _currentHealth;
     protected SpriteRenderer _spriteRenderer;
 
     protected void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-
+        _currentHealth = _enemyScriptableObject.Health;
         float x = Background.Instance.GetBackgroundWidth() - (_spriteRenderer.bounds.size.x / 2);
         float y = Background.Instance.GetBackgroundHeigth() + (_spriteRenderer.bounds.size.y * 2);
         transform.position = new Vector2(Random.Range(-x, x), y);
@@ -34,12 +35,21 @@ public abstract class Enemy : MonoBehaviour
 
         if (other.tag == "PlayerBullet")
         {
-            Destroy(other.gameObject);
-            if (GameManager.Instance != null)
+            PlayerBullet playerBullet = other.GetComponent<PlayerBullet>();
+            if(playerBullet != null)
             {
-                GameManager.Instance.AddScore(_enemyScriptableObject.PointReward);
-                OnDrop();
-                OnDeath();
+                _currentHealth -= playerBullet.Damage;
+            }
+            Destroy(other.gameObject);
+
+            if(_currentHealth <= 0)
+            {
+                if (GameManager.Instance != null)
+                {
+                    GameManager.Instance.AddScore(_enemyScriptableObject.PointReward);
+                    OnDrop();
+                    OnDeath();
+                }
             }
         }
     }

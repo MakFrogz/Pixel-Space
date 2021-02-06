@@ -16,6 +16,6 @@ MonoBehaviour:
   Energy: 100
   EnergyRestoreTime: 1
   Speed: 4
-  FireRate: 1
+  FireRate: 0.5
   DodgeMultiplySpeed: 5
   DodgeCost: 30

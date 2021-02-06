@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 8
   FireRate: 0
-  Health: 100
+  Health: 25
   CollisionDamage: 30
   PointReward: 100
   BulletPrefab: {fileID: 0}
