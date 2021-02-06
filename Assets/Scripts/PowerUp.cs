@@ -4,20 +4,11 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
+    [SerializeField] private BoostScriptableObject _boostScriptableObject;
     [SerializeField] private int _powerUpCount;
     [SerializeField] private float _speed;
     [SerializeField] private AudioClip _audioClip;
     
-    void Start()
-    {
-        /*float spriteSizeX = GetComponent<SpriteRenderer>().bounds.size.x;
-        float spriteSizeY = GetComponent<SpriteRenderer>().bounds.size.y;
-        float x = Background.Instance.GetBackgroundWidth() - (spriteSizeX / 2);
-        float y = Background.Instance.GetBackgroundHeigth() - (spriteSizeY / 2);
-        transform.position = new Vector3(Random.Range(-x, x) , y + 2f, 0f);*/
-    }
-
-
     private void FixedUpdate()
     {
         transform.Translate(Vector3.down * _speed * Time.fixedDeltaTime);
@@ -40,22 +31,22 @@ public class PowerUp : MonoBehaviour
                         player.GetComponent<PlayerHealthController>().ShieldActive();
                         break;
                     case 2:
-                        player.GetComponent<PlayerHealthController>().HealActive(25f);
+                        player.GetComponent<PlayerHealthController>().HealActive(_boostScriptableObject.Heal);
                         break;
                     case 3:
-                        player.GetComponent<PlayerHealthController>().AddMaxHealth();
+                        player.GetComponent<PlayerHealthController>().AddMaxHealth(_boostScriptableObject.HealthUp);
                         break;
                     case 4:
-                        player.GetComponent<PlayerEnergyController>().EnergyRestoreTime();
+                        player.GetComponent<PlayerEnergyController>().EnergyRestoreTime(_boostScriptableObject.EnergyRestoreTimeUp);
                         break;
                     case 5:
-                        player.GetComponent<PlayerEnergyController>().SetMaxEnergy();
+                        player.GetComponent<PlayerEnergyController>().SetMaxEnergy(_boostScriptableObject.EnergyUp);
                         break;
                     case 6:
                         player.GetComponent<PlayerShootController>().AddProjectile();
                         break;
                     case 7:
-                        player.GetComponent<PlayerShootController>().AddFireRate();
+                        player.GetComponent<PlayerShootController>().AddFireRate(_boostScriptableObject.FireRateUp);
                         break;
                     default:
                         Debug.LogWarning("Unknown boost!");

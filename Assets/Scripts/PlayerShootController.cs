@@ -17,6 +17,7 @@ public class PlayerShootController : MonoBehaviour
     void Start()
     {
         _fireRate = _playerScriptableObject.FireRate;
+        _numProjectile = 1;
     }
 
 
@@ -47,14 +48,17 @@ public class PlayerShootController : MonoBehaviour
 
     public void AddProjectile()
     {
-        _numProjectile++;
+        if(_numProjectile <= _playerScriptableObject.MaxProjectiles)
+        {
+            _numProjectile++;
+        }
     }
 
-    public void AddFireRate()
+    public void AddFireRate(float fireRateUp)
     {
-        if (_fireRate > 0.2f)
+        if (_fireRate > _playerScriptableObject.MaxFireRate)
         {
-            _fireRate -= 0.05f;
+            _fireRate -= fireRateUp;
         }
     }
 }

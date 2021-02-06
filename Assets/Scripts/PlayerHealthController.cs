@@ -56,9 +56,9 @@ public class PlayerHealthController : MonoBehaviour
         UIManager.Instance.UpdateHealthBar(_currentHealth);
     }
 
-    public void AddMaxHealth()
+    public void AddMaxHealth(float healthUp)
     {
-        _maxHealth += 15;
+        _maxHealth += healthUp;
         UIManager.Instance.SetMaxHealthBar(_maxHealth);
     }
 

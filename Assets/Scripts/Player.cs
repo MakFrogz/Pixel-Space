@@ -89,9 +89,9 @@ public class Player : MonoBehaviour
    
     public void SpeedBoostActive()
     {
-        if(_speed < 10f)
+        if(_speed < _playerScriptableObject.MaxSpeed)
         {
-            _speed += 0.5f;
+            _speed += _playerScriptableObject.StepSpeed;
 
         }
     }

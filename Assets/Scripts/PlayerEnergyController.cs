@@ -30,17 +30,17 @@ public class PlayerEnergyController : MonoBehaviour
         UIManager.Instance.UpdateEnergyBar(_currentEnergy);
     }
 
-    public void SetMaxEnergy()
+    public void SetMaxEnergy(float energyUp)
     {
-        _maxEnergy += 10f;
+        _maxEnergy += energyUp;
         UIManager.Instance.SetMaxEnergyBar(_maxEnergy);
     }
 
-    public void EnergyRestoreTime()
+    public void EnergyRestoreTime(float energyRestoreTimeUp)
     {
-        if (_energyRestoreTime > 0.5f)
+        if (_energyRestoreTime > _playerScriptableObject.MaxEnergyRestoreTime)
         {
-            _energyRestoreTime -= 0.1f;
+            _energyRestoreTime -= energyRestoreTimeUp;
         }
     }
 
