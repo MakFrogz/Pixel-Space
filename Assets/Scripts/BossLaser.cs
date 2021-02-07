@@ -5,9 +5,12 @@ using UnityEngine;
 public class BossLaser : MonoBehaviour
 {
     [SerializeField] private float _damage;
+    [SerializeField] private float _delayBetweenAttack;
 
-    private bool _canAttack;
     private Player _player;
+    
+    private bool _canAttack;
+    private float _nextAttackTime;
     void Start()
     {
         _canAttack = false;
@@ -16,8 +19,9 @@ public class BossLaser : MonoBehaviour
     
     void Update()
     {
-        if (_canAttack)
+        if (_canAttack && Time.time >= _nextAttackTime)
         {
+            _nextAttackTime = Time.time + _delayBetweenAttack;
             if (_player != null)
             {
                 _player.GetComponent<PlayerHealthController>().ApplyDamage(_damage);

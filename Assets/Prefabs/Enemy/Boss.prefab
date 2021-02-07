@@ -174,6 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
+  _delayBetweenAttack: 0.2
 --- !u!50 &1147306840557021655
 Rigidbody2D:
   serializedVersion: 4
@@ -362,7 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bossScriptableObject: {fileID: 11400000, guid: ca6d794d1dced16428e602ef2f547db9, type: 2}
-  _startPosition: {x: 0, y: 5, z: 0}
+  _startPosition: {fileID: 0}
   _boostPrefab: {fileID: 5230087772860035777, guid: ffef866b4cd919346a1c4f08f4b65c5f, type: 3}
   _projectilesNum: 30
   _laser: {fileID: 1147306840557021649}

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca099056ffb13f44fb072d52ac5a1bda, type: 3}
   m_Name: Enemy_big
   m_EditorClassIdentifier: 
-  Speed: 3
-  FireRate: 1
+  Speed: 2
+  FireRate: 1.5
   Health: 100
   CollisionDamage: 20
   PointReward: 200

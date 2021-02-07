@@ -200,6 +200,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4196c1a8efd0e6a499da9c464f94a683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1708675748 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1966475705, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
+  m_PrefabInstance: {fileID: 5977376026397295894}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1752171404
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,6 +632,10 @@ PrefabInstance:
       propertyPath: _stepDestroyedEnemiesNumberForNextSpawnBoss
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
+      propertyPath: _startPoint
+      value: 
+      objectReference: {fileID: 1708675748}
     - target: {fileID: 5977376027254897022, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
