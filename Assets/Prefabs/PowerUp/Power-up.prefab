@@ -136,3 +136,4 @@ MonoBehaviour:
   _powerUpCount: 8
   _speed: 1.5
   _audioClip: {fileID: 8300000, guid: 5ee343246919d2b4bba63ae629e95494, type: 3}
+  _popupTextPrefab: {fileID: 7276659956754505643, guid: 6ac79a711b6ffac4793fdc27ee1f2b80, type: 3}

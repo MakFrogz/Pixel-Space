@@ -13,8 +13,16 @@ MonoBehaviour:
   m_Name: Boost Data
   m_EditorClassIdentifier: 
   HealthUp: 25
+  HealthUpText: Health +
   Heal: 25
+  HealText: Heal
   EnergyUp: 25
+  EnergyUpText: Energy +
   EnergyRestoreTimeUp: 0.05
+  EnergyRestoreTimeUpText: Energy Restore Time -
   SpeedUp: 0.2
+  SpeedUpText: Speed +
   FireRateUp: 0.05
+  FireRateUpText: Fire Rate +
+  ShieldText: Shield
+  ProjectileUpText: Projectile+

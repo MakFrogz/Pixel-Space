@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1481895897}
   - component: {fileID: 1481895898}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trail Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 420125165
-  m_SortingLayer: 2
+  m_SortingLayer: -1
   m_SortingOrder: 1
   m_Time: 0.2
   m_Parameters:
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 1341128279612173597}
   - component: {fileID: 1341128279612173595}
   - component: {fileID: 1341128279612173596}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 420125165
-  m_SortingLayer: 2
+  m_SortingLayer: -1
   m_SortingOrder: -2
   m_Sprite: {fileID: -4098029715399502762, guid: 33349c6ebd38f624385354812c3ebda8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 2240360539054219756}
   - component: {fileID: 6728562036909420727}
   - component: {fileID: -6655117849181091057}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 420125165
-  m_SortingLayer: 2
+  m_SortingLayer: -1
   m_SortingOrder: 10
   m_Sprite: {fileID: -3352868958805856340, guid: f8c29626882e7d440a65baa4b142580f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -540,7 +540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5238588122887248705}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}

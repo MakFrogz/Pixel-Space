@@ -26,7 +26,6 @@ public class SpawnManager : MonoBehaviour
 
     [Header("Boss Settings")]
     [SerializeField] private Transform _spawnPoint;
-    [SerializeField] private Transform _startPoint;
     [SerializeField] private GameObject[] _bossPrefabs;
     [SerializeField] private int _destroyedEnemiesNumberForSpawnBoss;
     [SerializeField] private int _stepDestroyedEnemiesNumberForNextSpawnBoss;
@@ -111,7 +110,6 @@ public class SpawnManager : MonoBehaviour
         _canSpawnAsteroids = false;
         GameObject boss = Instantiate(GetRandomBoss());
         boss.transform.position = _spawnPoint.position;
-        boss.GetComponent<BossBig>().StartPosition = _spawnPoint;
     }
 
     private GameObject GetRandomBoss()

@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Boss : MonoBehaviour
 {
     [SerializeField] protected BossScriptableObject _bossScriptableObject;
-    public Transform StartPosition { get; set; }
+    [SerializeField] protected Vector3 _startPosition;
     [SerializeField] protected GameObject _boostPrefab;
 
     protected float _health;
@@ -25,8 +25,8 @@ public abstract class Boss : MonoBehaviour
         {
             return;
         }
-        transform.position = Vector2.MoveTowards(transform.position, StartPosition.position, Time.deltaTime * _bossScriptableObject.Speed);
-        if(transform.position == StartPosition.position)
+        transform.position = Vector2.MoveTowards(transform.position, _startPosition, Time.deltaTime * _bossScriptableObject.Speed);
+        if(transform.position == _startPosition)
         {
             _canMove = true;
         }
