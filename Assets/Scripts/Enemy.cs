@@ -10,6 +10,7 @@ public abstract class Enemy : MonoBehaviour
     protected float _currentHealth;
     protected SpriteRenderer _spriteRenderer;
 
+    private bool _isDeath;
     protected void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -17,12 +18,19 @@ public abstract class Enemy : MonoBehaviour
         float x = Background.Instance.GetBackgroundWidth() - (_spriteRenderer.bounds.size.x / 2);
         float y = Background.Instance.GetBackgroundHeigth() + (_spriteRenderer.bounds.size.y * 2);
         transform.position = new Vector2(Random.Range(-x, x), y);
+        _isDeath = false;
     }
 
     protected abstract void Move();
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (_isDeath)
+        {
+            Destroy(other.gameObject);
+            return;
+        }
+
         if (other.tag == "Player")
         {
             Player player = other.GetComponent<Player>();
@@ -61,6 +69,7 @@ public abstract class Enemy : MonoBehaviour
 
     private void OnDeath()
     {
+        _isDeath = true;
         GameManager.Instance.DestroyedEnemiesCount++;
         Instantiate(_enemyScriptableObject.ExplosionPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);

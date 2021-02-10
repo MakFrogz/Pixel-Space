@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2354826923536548832}
   - component: {fileID: 6214057266452960603}
   - component: {fileID: 2270057120301890580}
+  - component: {fileID: 789107034903402908}
   m_Layer: 0
   m_Name: Power-up
   m_TagString: Untagged
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 420125165
-  m_SortingLayer: 2
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 3481269006155310027, guid: 6734008e4b58d744282bf480c8dda6f5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -137,3 +138,24 @@ MonoBehaviour:
   _speed: 1.5
   _audioClip: {fileID: 8300000, guid: 5ee343246919d2b4bba63ae629e95494, type: 3}
   _popupTextPrefab: {fileID: 7276659956754505643, guid: 6ac79a711b6ffac4793fdc27ee1f2b80, type: 3}
+--- !u!50 &789107034903402908
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5230087772860035777}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

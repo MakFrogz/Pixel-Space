@@ -10,7 +10,6 @@ public class PowerUp : MonoBehaviour
     [SerializeField] private AudioClip _audioClip;
     [SerializeField] private GameObject _popupTextPrefab;
 
-    private bool _isCollided = false;
     private void FixedUpdate()
     {
         transform.Translate(Vector3.down * _speed * Time.fixedDeltaTime);
@@ -18,9 +17,8 @@ public class PowerUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player" && !_isCollided)
+        if(other.tag == "Player")
         {
-            _isCollided = true;
             Player player = other.GetComponent<Player>();
             AudioManager.Instance.PlaySFX(_audioClip);
             string popupText = null;
