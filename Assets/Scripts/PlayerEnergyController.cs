@@ -31,27 +31,28 @@ public class PlayerEnergyController : MonoBehaviour
         UIManager.Instance.UpdateEnergyBar(_currentEnergy);
     }
 
-    public void SetMaxEnergy(float energyUp)
+    public void IncreaseMaxEnergy(float value)
     {
-        _maxEnergy += energyUp;
+        _maxEnergy += value;
         UIManager.Instance.SetMaxEnergyBar(_maxEnergy);
+        StartCoroutine("StartEnergyRecovery");
     }
 
-    public void EnergyRestoreTime(float energyRestoreTimeUp)
+    public void DecreaseEnergyRecoveryTime(float value)
     {
         if (_energyRestoreTime > _playerScriptableObject.MaxEnergyRestoreTime)
         {
-            _energyRestoreTime -= energyRestoreTimeUp;
+            _energyRestoreTime -= value;
         }
     }
 
-    public void StartEnergyRestore()
+    public void StartEnergyRecovery()
     {
-        StopCoroutine("EnergyRestore");
-        StartCoroutine("EnergyRestore");
+        StopCoroutine("EnergyRecovery");
+        StartCoroutine("EnergyRecovery");
     }
 
-    private IEnumerator EnergyRestore()
+    private IEnumerator EnergyRecovery()
     {
         yield return new WaitForSeconds(3f);
         while (_currentEnergy < _maxEnergy)

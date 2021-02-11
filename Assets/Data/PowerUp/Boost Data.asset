@@ -12,17 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd64d75a1e235f04ea1cc6b459b1e233, type: 3}
   m_Name: Boost Data
   m_EditorClassIdentifier: 
-  HealthUp: 25
-  HealthUpText: Health +
-  Heal: 25
-  HealText: Heal
-  EnergyUp: 25
-  EnergyUpText: Energy +
-  EnergyRestoreTimeUp: 0.05
-  EnergyRestoreTimeUpText: Energy Restore Time -
-  SpeedUp: 0.2
-  SpeedUpText: Speed +
-  FireRateUp: 0.05
-  FireRateUpText: Fire Rate +
-  ShieldText: Shield
-  ProjectileUpText: Projectile+
+  Speed: 1
+  AudioClip: {fileID: 8300000, guid: 5ee343246919d2b4bba63ae629e95494, type: 3}
+  PopupTextPrefab: {fileID: 7276659956754505643, guid: 6ac79a711b6ffac4793fdc27ee1f2b80, type: 3}

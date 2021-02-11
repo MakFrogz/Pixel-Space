@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShootController : MonoBehaviour
+public class PlayerShootController : MonoBehaviour, IAttack
 {
     [SerializeField] private PlayerScriptableObject _playerScriptableObject;
     [SerializeField] private GameObject _bulletPrefab;
@@ -14,10 +14,11 @@ public class PlayerShootController : MonoBehaviour
     private float _fireRate;
     private float _nextFire;
 
+    public Transform FirePoint { get => _firePoint; set => _firePoint = value; }
+
     void Start()
     {
         _fireRate = _playerScriptableObject.FireRate;
-        _numProjectile = 3;
     }
 
 
@@ -25,11 +26,27 @@ public class PlayerShootController : MonoBehaviour
     {
         if (Time.time > _nextFire)
         {
-            FireLaser();
+            Attack();
         }
     }
 
-    private void FireLaser()
+    public void IncreaseProjectile()
+    {
+        if(_numProjectile <= _playerScriptableObject.MaxProjectiles)
+        {
+            _numProjectile++;
+        }
+    }
+
+    public void IncreaseFireRate(float value)
+    {
+        if (_fireRate > _playerScriptableObject.MaxFireRate)
+        {
+            _fireRate -= value;
+        }
+    }
+
+    public void Attack()
     {
         _nextFire = Time.time + _fireRate;
         bool s = _numProjectile % 2 == 0;
@@ -41,24 +58,8 @@ public class PlayerShootController : MonoBehaviour
                 continue;
             }
             Quaternion target = Quaternion.AngleAxis(i * _angleStep, transform.forward);
-            Instantiate(_bulletPrefab, _firePoint.position , target);
+            Instantiate(_bulletPrefab, _firePoint.position, target);
         }
         AudioManager.Instance.PlaySFX(_fireSound);
-    }
-
-    public void AddProjectile()
-    {
-        if(_numProjectile <= _playerScriptableObject.MaxProjectiles)
-        {
-            _numProjectile++;
-        }
-    }
-
-    public void AddFireRate(float fireRateUp)
-    {
-        if (_fireRate > _playerScriptableObject.MaxFireRate)
-        {
-            _fireRate -= fireRateUp;
-        }
     }
 }

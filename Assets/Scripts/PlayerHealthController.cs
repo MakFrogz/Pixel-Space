@@ -46,9 +46,9 @@ public class PlayerHealthController : MonoBehaviour
         }
     }
 
-    public void HealActive(float health)
+    public void ActivateHeal(float value)
     {
-        _currentHealth += health;
+        _currentHealth += value;
         if (_currentHealth > _maxHealth)
         {
             _currentHealth = _maxHealth;
@@ -56,13 +56,13 @@ public class PlayerHealthController : MonoBehaviour
         UIManager.Instance.UpdateHealthBar(_currentHealth);
     }
 
-    public void AddMaxHealth(float healthUp)
+    public void IncreaseMaxHealth(float healthUp)
     {
         _maxHealth += healthUp;
         UIManager.Instance.SetMaxHealthBar(_maxHealth);
     }
 
-    public void ShieldActive()
+    public void ActivateShield()
     {
         _isShieldActive = true;
         _shield.SetActive(true);

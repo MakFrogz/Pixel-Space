@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
     }
 
    
-    public void SpeedBoostActive(float speedUp)
+    public void IncreaseSpeed(float speedUp)
     {
         if(_speed < _playerScriptableObject.MaxSpeed)
         {
@@ -109,7 +109,7 @@ public class Player : MonoBehaviour
             _trailRenderer.emitting = true;
             _speed *= _playerScriptableObject.DodgeMultiplySpeed;
             StartCoroutine("DodgeRoutine");
-            _playerEnergyController.StartEnergyRestore();
+            _playerEnergyController.StartEnergyRecovery();
         }
     }
 
