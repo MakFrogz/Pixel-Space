@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class PowerUp : MonoBehaviour
 {
-    [SerializeField] protected BoostScriptableObject _boostScriptableObject;
+    [SerializeField] protected PowerUpScriptableObject _boostScriptableObject;
     [SerializeField] protected string _boostName;
 
     private void FixedUpdate()

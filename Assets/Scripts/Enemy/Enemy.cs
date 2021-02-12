@@ -5,7 +5,6 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] protected EnemyScriptableObject _enemyScriptableObject;
-    [SerializeField] protected GameObject _boostPrefab;
 
     protected float _currentHealth;
     protected SpriteRenderer _spriteRenderer;
@@ -78,9 +77,15 @@ public abstract class Enemy : MonoBehaviour
     private void OnDrop()
     {
         float chance = Random.Range(0f, 100f);
-        if(chance < _enemyScriptableObject.BoostDropChance)
+        if(chance < _enemyScriptableObject.PowerUpDropChance)
         {
-            Instantiate(_boostPrefab, transform.position, Quaternion.identity);
+            Instantiate(GetRandomPowerUp(), transform.position, Quaternion.identity);
         }
+    }
+
+    private GameObject GetRandomPowerUp()
+    {
+        int powerUpIndex = Random.Range(0, _enemyScriptableObject.PowerUpPrefabs.Length);
+        return _enemyScriptableObject.PowerUpPrefabs[powerUpIndex];
     }
 }

@@ -76,6 +76,12 @@ public abstract class Boss : MonoBehaviour
 
     private void OnDrop()
     {
-        Instantiate(_boostPrefab, transform.position, Quaternion.identity);
+        Instantiate(GetRandomPowerUp(), transform.position, Quaternion.identity);
+    }
+
+    private GameObject GetRandomPowerUp()
+    {
+        int powerUpIndex = Random.Range(0, _bossScriptableObject.PowerUpPrefabs.Length);
+        return _bossScriptableObject.PowerUpPrefabs[powerUpIndex];
     }
 }

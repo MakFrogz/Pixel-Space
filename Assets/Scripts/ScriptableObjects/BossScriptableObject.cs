@@ -11,4 +11,5 @@ public class BossScriptableObject : ScriptableObject
     public float Health;
     public GameObject ExplosionPrefab;
     public GameObject BulletPrefab;
+    public GameObject[] PowerUpPrefabs;
 }

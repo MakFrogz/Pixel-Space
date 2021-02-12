@@ -12,6 +12,7 @@ public class EnemyScriptableObject : ScriptableObject
     public int PointReward;
     public GameObject BulletPrefab;
     public GameObject ExplosionPrefab;
+    public GameObject[] PowerUpPrefabs;
     [Range(0,100)]
-    public float BoostDropChance;
+    public float PowerUpDropChance;
 }
