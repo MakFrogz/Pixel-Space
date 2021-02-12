@@ -132,6 +132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c16ce50f1f00114b9948bad985b007d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _boostScriptableObject: {fileID: 11400000, guid: 9e76312722360e745997defac4c1e72e, type: 2}
+  _boostScriptableObject: {fileID: 11400000, guid: 275da81ad9c4e4e459cad7dd4c18ca10, type: 2}
   _boostName: Heal
   _healValue: 25

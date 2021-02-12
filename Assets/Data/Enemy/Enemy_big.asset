@@ -19,4 +19,9 @@ MonoBehaviour:
   PointReward: 200
   BulletPrefab: {fileID: 7894325551798927938, guid: 37cbfb0440709b24f948698d0bac23d1, type: 3}
   ExplosionPrefab: {fileID: 8925422334815634955, guid: 02dc5c1fc65725f4a92ed6d868d66c3d, type: 3}
-  BoostDropChance: 15
+  PowerUpPrefabs:
+  - {fileID: 5865254886855606712, guid: 3946cc91c50b0c54db934b934a9eabc1, type: 3}
+  - {fileID: 2682865968987943068, guid: 556db0cd791693448826cfb054971eb5, type: 3}
+  - {fileID: 8735706413879268460, guid: 53b786c1de9e68845b62870de92d7765, type: 3}
+  - {fileID: 3563747794087258883, guid: d53f31431eb429944bbbbbd82366cf60, type: 3}
+  PowerUpDropChance: 10

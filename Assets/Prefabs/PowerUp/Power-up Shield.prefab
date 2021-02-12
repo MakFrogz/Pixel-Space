@@ -132,5 +132,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b60312d45e1c3049b0c004ecc446266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _boostScriptableObject: {fileID: 11400000, guid: 9e76312722360e745997defac4c1e72e, type: 2}
+  _boostScriptableObject: {fileID: 11400000, guid: 275da81ad9c4e4e459cad7dd4c18ca10, type: 2}
   _boostName: Shield
