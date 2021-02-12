@@ -21,14 +21,18 @@ public class BossBig : Boss, IAttack
     private bool _canSingleAttack;
 
 
-    new void Start()
+    private new void Awake()
     {
-        base.Start();
+        base.Awake();
+        _direction = 1;
+        _speed = _enemyScriptableObject.Speed;
+    }
+
+    private void Start()
+    {
         _laser.SetActive(false);
         _player = GameObject.FindGameObjectWithTag("Player");
         _xBounds = Background.Instance.GetBackgroundWidth();
-        _direction = 1;
-        _speed = _bossScriptableObject.Speed;
         StartCoroutine("AttacksRoutine");
     }
 
@@ -81,9 +85,9 @@ public class BossBig : Boss, IAttack
 
         if (Time.time > _nextFire)
         {
-            _nextFire = Time.time + _bossScriptableObject.FireRate;
+            _nextFire = Time.time + _enemyScriptableObject.FireRate;
             Vector3 target = _player == null ? Vector3.down : _player.transform.position;
-            Instantiate(_bossScriptableObject.BulletPrefab, FirePoint.position, Quaternion.LookRotation(Vector3.forward, transform.position - target));
+            Instantiate(_enemyScriptableObject.BulletPrefab, FirePoint.position, Quaternion.LookRotation(Vector3.forward, transform.position - target));
         }
     }
 
@@ -107,7 +111,7 @@ public class BossBig : Boss, IAttack
             yield return new WaitForSeconds(0.5f);
             for (int i = 0; i < _projectilesNum; i++)
             {
-                Instantiate(_bossScriptableObject.BulletPrefab, transform.position, Quaternion.Euler(new Vector3(0f, 0f, step * i)));
+                Instantiate(_enemyScriptableObject.BulletPrefab, transform.position, Quaternion.Euler(new Vector3(0f, 0f, step * i)));
             }
         }
         yield return new WaitForSeconds(1f);
@@ -140,7 +144,7 @@ public class BossBig : Boss, IAttack
 
     private IEnumerator AttacksRoutine()
     {
-        while (_isAlive)
+        while (!_isDeath)
         {
             _canSingleAttack = true;
             yield return new WaitForSeconds(10f);

@@ -9,19 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 980ec5baf11d68547be559e60a5fdfd4, type: 3}
-  m_Name: BossBig
+  m_Script: {fileID: 11500000, guid: ca099056ffb13f44fb072d52ac5a1bda, type: 3}
+  m_Name: Boss Data
   m_EditorClassIdentifier: 
-  Damage: 25
-  Speed: 6
-  FireRate: 1
-  Health: 500
-  ExplosionPrefab: {fileID: 8925422334815634955, guid: 02dc5c1fc65725f4a92ed6d868d66c3d, type: 3}
+  Speed: 4
+  FireRate: 2
+  Health: 1000
+  CollisionDamage: 0
+  PointReward: 500
   BulletPrefab: {fileID: 7894325551798927938, guid: 37cbfb0440709b24f948698d0bac23d1, type: 3}
+  ExplosionPrefab: {fileID: 8925422334815634955, guid: 02dc5c1fc65725f4a92ed6d868d66c3d, type: 3}
   PowerUpPrefabs:
-  - {fileID: 3141964748094940053, guid: c4f00fa214870a649b6c31717c037911, type: 3}
   - {fileID: 8460472657089968549, guid: 2b71e58b24eef484bb327dd471153b5f, type: 3}
-  - {fileID: 2746500683872137002, guid: 3a5a7bb0f2bb4da42843e4eb4669159e, type: 3}
-  - {fileID: 3563747794087258883, guid: d53f31431eb429944bbbbbd82366cf60, type: 3}
   - {fileID: 8735706413879268460, guid: 53b786c1de9e68845b62870de92d7765, type: 3}
+  - {fileID: 2746500683872137002, guid: 3a5a7bb0f2bb4da42843e4eb4669159e, type: 3}
+  - {fileID: 3141964748094940053, guid: c4f00fa214870a649b6c31717c037911, type: 3}
   - {fileID: 5936964315628909440, guid: b6db8d95df814b44ca57930fc03d8055, type: 3}
+  - {fileID: 3563747794087258883, guid: d53f31431eb429944bbbbbd82366cf60, type: 3}
+  PowerUpDropChance: 100

@@ -10,10 +10,9 @@ public class EnemyMedium : Enemy, IAttack
     private float _nextFire;
     private Vector3 _direction;
 
-
-    new void Start()
+    private new void Start()
     {
-
+        Debug.Log("Enemy medium Start");
         base.Start();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         _direction = player.transform.position - transform.position;

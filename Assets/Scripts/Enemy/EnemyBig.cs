@@ -11,7 +11,7 @@ public class EnemyBig : Enemy, IAttack
     private GameObject _player;
 
 
-    new void Start()
+    private new void Start()
     {
         base.Start();
         _player = GameObject.FindGameObjectWithTag("Player");
