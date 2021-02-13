@@ -144,11 +144,11 @@ MonoBehaviour:
   - {fileID: 3922055961824767988, guid: a5063485e9ceb614eb8fe0cb816a0233, type: 3}
   - {fileID: 1035589443549414813, guid: b3ee43481e7da934b8afcea4f675f857, type: 3}
   - {fileID: 5918198891805554936, guid: 260675a5beae0e54ba71d4a1e5f81403, type: 3}
-  _minAsteroidsNumber: 50
-  _maxAsteroidsNumber: 100
+  _minAsteroidsNumber: 30
+  _maxAsteroidsNumber: 50
   _minSpawnAsteroidsTime: 60
   _maxSpawnAsteroidsTime: 180
-  _timeBetweenAsteroids: 0.3
+  _timeBetweenAsteroids: 0.5
   _spawnPoint: {fileID: 5977376026385074773}
   _bossPrefabs:
   - {fileID: 1147306840801887009, guid: dba2f25c546cb714e9c0f2c8d27445c3, type: 3}

@@ -34,6 +34,7 @@ public class BossBig : Boss, IAttack
         _player = GameObject.FindGameObjectWithTag("Player");
         _xBounds = Background.Instance.GetBackgroundWidth();
         StartCoroutine("AttacksRoutine");
+        Debug.Log(_currentHealth);
     }
 
     void Update()

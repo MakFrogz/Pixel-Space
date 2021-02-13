@@ -34,6 +34,10 @@ public abstract class EnemyBase : MonoBehaviour
 
     public void ApplyDamage(float damage)
     {
+        if (_isDeath)
+        {
+            return;
+        }
         _currentHealth -= damage;
         if(_currentHealth <= 0)
         {

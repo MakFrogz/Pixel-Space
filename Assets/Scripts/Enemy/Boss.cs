@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Boss : EnemyBase
 {
     [SerializeField] protected Vector3 _startPosition;
+    [SerializeField] protected int _dropAmount;
   
     protected bool _canMove;
     protected new void Awake()
@@ -40,7 +41,11 @@ public abstract class Boss : EnemyBase
 
     protected override void OnDrop()
     {
-        Instantiate(GetRandomPowerUp(), transform.position, Quaternion.identity);
+        for(int i = 0; i < _dropAmount; i++)
+        {
+            Vector2 position = new Vector2(transform.position.x + Random.Range(-2f,2f), transform.position.y + Random.Range(-2f, 2f));
+            Instantiate(GetRandomPowerUp(), position, Quaternion.identity);
+        }
     }
 
 }

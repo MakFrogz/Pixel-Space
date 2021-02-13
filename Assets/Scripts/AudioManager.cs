@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     private AudioSource _audioSource;
     public static AudioManager Instance { get; set; }
-    private void Start()
+    private void Awake()
     {
         Instance = this;
         _audioSource = GetComponent<AudioSource>();

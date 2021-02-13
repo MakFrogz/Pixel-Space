@@ -8,7 +8,7 @@ public class PlayerBullet : Bullet
     {
         if (other.CompareTag(_bulletScriptableObject.TagString))
         {
-            Enemy enemy = other.GetComponent<Enemy>();
+            EnemyBase enemy = other.GetComponent<EnemyBase>();
             if(enemy != null)
             {
                 enemy.ApplyDamage(_bulletScriptableObject.Damage);
