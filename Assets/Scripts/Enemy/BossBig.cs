@@ -43,9 +43,9 @@ public class BossBig : Boss, IAttack
 
     void FixedUpdate()
     {
-        MoveToStartPosition();
         if (!_canMove)
         {
+            IntroMove();
             return;
         }
         Move();
@@ -135,7 +135,7 @@ public class BossBig : Boss, IAttack
         yield return new WaitForSeconds(1f);
         _laser.GetComponent<Animator>().SetBool("Attack", true);
         _speed *= 2f;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         _laser.GetComponent<Animator>().SetBool("Attack", false);
         _laser.SetActive(false);
         _canSingleAttack = true;

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 471493075392758397}
   - component: {fileID: 471493075392758396}
   - component: {fileID: 471493075392758371}
+  - component: {fileID: 3701654216477679021}
   m_Layer: 0
   m_Name: Mine
   m_TagString: Untagged
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 420125165
-  m_SortingLayer: 2
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 8135663367076951168, guid: 27301e93c6c2ed84c869578b980343a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -123,3 +124,19 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 1024
+--- !u!58 &3701654216477679021
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471493075392758399}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

@@ -27,7 +27,6 @@ public class Mine : MonoBehaviour
     {
        if (!_isTimer)
        {
-            Debug.Log("Try detect palyer");
             bool isDetectPlayer =  Physics2D.OverlapCircle(transform.position, _radius, _layerMask);
             if (isDetectPlayer)
             {
@@ -55,14 +54,30 @@ public class Mine : MonoBehaviour
         Collider2D other = Physics2D.OverlapCircle(transform.position, _radius, _layerMask);
         if(other != null)
         {
-            PlayerHealthController playerHealth = other.GetComponent<PlayerHealthController>();
-            if(playerHealth != null)
-            {
-                playerHealth.ApplyDamage(_damage);
-            }
+            ApplyDamage(other);
         }
         Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            ApplyDamage(other);
+            Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
+
+    private void ApplyDamage(Collider2D other)
+    {
+        PlayerHealthController playerHealth = other.GetComponent<PlayerHealthController>();
+        if (playerHealth != null)
+        {
+            playerHealth.ApplyDamage(_damage);
+        }
+
     }
 
     private void OnDrawGizmos()

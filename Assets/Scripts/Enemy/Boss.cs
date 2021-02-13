@@ -7,19 +7,18 @@ public abstract class Boss : EnemyBase
     [SerializeField] protected Vector3 _startPosition;
   
     protected bool _canMove;
-
     protected new void Awake()
     {
         base.Awake();
         _canMove = false;
     }
 
-    protected void MoveToStartPosition()
+    protected void IntroMove()
     {
-        if (_canMove)
+        /*if (_canMove)
         {
             return;
-        }
+        }*/
         transform.position = Vector2.MoveTowards(transform.position, _startPosition, Time.deltaTime * _enemyScriptableObject.Speed);
         if (transform.position == _startPosition)
         {
