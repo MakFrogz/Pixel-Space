@@ -49,11 +49,12 @@ public class PlayerShootController : MonoBehaviour, IAttack
     public void Attack()
     {
         _nextFire = Time.time + _fireRate;
-        bool s = _numProjectile % 2 == 0;
+        bool b = _numProjectile % 2 == 0;
         int d = _numProjectile % 2;
+        Debug.Log(3%10);
         for (int i = -(_numProjectile - d) / 2; i <= (_numProjectile - d) / 2; i++)
         {
-            if (s && i == 0)
+            if (b && i == 0)
             {
                 continue;
             }

@@ -2,24 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBullet : MonoBehaviour
+public class PlayerBullet : Bullet
 {
-    [SerializeField] private float _speed = 8f;
-    [SerializeField] private float _damage;
-
-    public float Damage { get { return _damage; } private set { _damage = value; } }
-
-    private void FixedUpdate()
+    protected override void OnCollision(Collider2D other)
     {
-        transform.Translate(Vector3.up * _speed * Time.fixedDeltaTime);
-    }
-
-    private void OnBecameInvisible()
-    {
-        /*if(transform.parent != null)
+        if (other.CompareTag(_bulletScriptableObject.TagString))
         {
-            Destroy(transform.parent.gameObject);
-        }*/
-        Destroy(gameObject);
+            Enemy enemy = other.GetComponent<Enemy>();
+            if(enemy != null)
+            {
+                enemy.ApplyDamage(_bulletScriptableObject.Damage);
+            }
+            OnExplosion(other);
+        }
     }
 }

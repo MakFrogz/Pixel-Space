@@ -28,26 +28,20 @@ public abstract class EnemyBase : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            OnEnemyCollision(other);
+            OnCollision(other);
         }
+    }
 
-        if (other.tag == "PlayerBullet")
+    public void ApplyDamage(float damage)
+    {
+        _currentHealth -= damage;
+        if(_currentHealth <= 0)
         {
-            PlayerBullet playerBullet = other.GetComponent<PlayerBullet>();
-            if(playerBullet != null)
+            if (GameManager.Instance != null)
             {
-                _currentHealth -= playerBullet.Damage;
-            }
-            Destroy(other.gameObject);
-
-            if(_currentHealth <= 0)
-            {
-                if (GameManager.Instance != null)
-                {
-                    GameManager.Instance.AddScore(_enemyScriptableObject.PointReward);
-                    OnDrop();
-                    OnDeath();
-                }
+                GameManager.Instance.AddScore(_enemyScriptableObject.PointReward);
+                OnDrop();
+                OnDeath();
             }
         }
     }
@@ -57,7 +51,7 @@ public abstract class EnemyBase : MonoBehaviour
         Destroy(gameObject);
     }
 
-    protected virtual void OnEnemyCollision (Collider2D other)
+    protected virtual void OnCollision (Collider2D other)
     {
         Player player = other.GetComponent<Player>();
         if (player != null)

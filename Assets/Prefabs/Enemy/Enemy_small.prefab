@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 420125165
-  m_SortingLayer: 2
+  m_SortingLayer: -1
   m_SortingOrder: -1
   m_Sprite: {fileID: 4564231259487795435, guid: 89af43afc8c4c5041a553d4c2024998b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -253,7 +253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyScriptableObject: {fileID: 11400000, guid: 0f4bd3a35527c2e4888e00014befa567, type: 2}
-  _boostPrefab: {fileID: 5230087772860035777, guid: ffef866b4cd919346a1c4f08f4b65c5f, type: 3}
+  _minePrefab: {fileID: 471493075392758399, guid: 8e49fdfda9080d5409d847f0d77903d1, type: 3}
+  _chanceToDropMine: 25
 --- !u!114 &-1794523491698703440
 MonoBehaviour:
   m_ObjectHideFlags: 0

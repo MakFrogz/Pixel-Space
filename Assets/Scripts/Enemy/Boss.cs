@@ -28,7 +28,7 @@ public abstract class Boss : EnemyBase
     }
 
 
-    protected override void OnEnemyCollision(Collider2D other)
+    protected override void OnCollision(Collider2D other)
     {
         Destroy(other.gameObject);
     }

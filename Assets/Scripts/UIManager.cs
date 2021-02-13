@@ -11,7 +11,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider _healthBar;
     [SerializeField] private Slider _energyBar;
 
-    //private GameManager _gameManager;
     public static UIManager Instance { get; set; }
     private void Awake()
     {
@@ -23,9 +22,6 @@ public class UIManager : MonoBehaviour
         _scoreText.text = "Score: 0";
         _gameOverText.gameObject.SetActive(false);
         _restartText.gameObject.SetActive(false);
-        /*_healthBar.value = _healthBar.maxValue;
-        _energyBar.value = _energyBar.maxValue;*/
-        //_gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     public void UpdateScore(int playerScore)
@@ -56,7 +52,6 @@ public class UIManager : MonoBehaviour
 
     public void GameOverSequence()
     {
-        //_gameManager.GameOver();
         _gameOverText.gameObject.SetActive(true);
         _restartText.gameObject.SetActive(true);
         StartCoroutine(GameOverFlickerRoutine());
