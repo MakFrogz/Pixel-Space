@@ -16,10 +16,6 @@ public abstract class Boss : EnemyBase
 
     protected void IntroMove()
     {
-        /*if (_canMove)
-        {
-            return;
-        }*/
         transform.position = Vector2.MoveTowards(transform.position, _startPosition, Time.deltaTime * _enemyScriptableObject.Speed);
         if (transform.position == _startPosition)
         {
@@ -30,7 +26,11 @@ public abstract class Boss : EnemyBase
 
     protected override void OnCollision(Collider2D other)
     {
-        Destroy(other.gameObject);
+        PlayerHealthController playerHealthController = other.GetComponent<PlayerHealthController>();
+        if(playerHealthController != null)
+        {
+            playerHealthController.OnDeath();
+        }
     }
 
     protected override void OnDeath()

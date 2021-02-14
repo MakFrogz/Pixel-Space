@@ -40,7 +40,7 @@ public class PlayerHealthController : MonoBehaviour
         UIManager.Instance.UpdateHealthBar(_currentHealth);
         if (_currentHealth <= 0)
         {
-            Destroy(gameObject);
+            OnDeath();
         }
     }
 
@@ -66,10 +66,11 @@ public class PlayerHealthController : MonoBehaviour
         _shield.SetActive(true);
     }
 
-    private void OnDestroy()
+    public void OnDeath()
     {
         GameManager.Instance.GameOver();
         Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
 }

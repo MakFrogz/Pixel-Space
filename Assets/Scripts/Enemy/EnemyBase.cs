@@ -32,6 +32,16 @@ public abstract class EnemyBase : MonoBehaviour
         }
     }
 
+    protected virtual void OnCollision (Collider2D other)
+    {
+        PlayerHealthController playerHealthController = other.GetComponent<PlayerHealthController>();
+        if (playerHealthController != null)
+        {
+            playerHealthController.ApplyDamage(_enemyScriptableObject.CollisionDamage);
+            OnDeath();
+        }
+    }
+
     public void ApplyDamage(float damage)
     {
         if (_isDeath)
@@ -50,20 +60,7 @@ public abstract class EnemyBase : MonoBehaviour
         }
     }
 
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-    }
 
-    protected virtual void OnCollision (Collider2D other)
-    {
-        Player player = other.GetComponent<Player>();
-        if (player != null)
-        {
-            player.GetComponent<PlayerHealthController>().ApplyDamage(_enemyScriptableObject.CollisionDamage);
-            OnDeath();
-        }
-    }
 
     protected virtual void OnDeath()
     {
@@ -78,5 +75,9 @@ public abstract class EnemyBase : MonoBehaviour
     {
         int powerUpIndex = Random.Range(0, _enemyScriptableObject.PowerUpPrefabs.Length);
         return _enemyScriptableObject.PowerUpPrefabs[powerUpIndex];
+    }
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }

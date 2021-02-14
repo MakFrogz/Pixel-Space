@@ -10,6 +10,7 @@ public class EnemyScriptableObject : ScriptableObject
     public float Health;
     public float CollisionDamage;
     public int PointReward;
+    public AudioClip ShotSound;
     public GameObject BulletPrefab;
     public GameObject ExplosionPrefab;
     public GameObject[] PowerUpPrefabs;

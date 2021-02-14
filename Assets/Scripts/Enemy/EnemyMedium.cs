@@ -42,6 +42,7 @@ public class EnemyMedium : Enemy, IAttack
 
         if (Time.time > _nextFire)
         {
+            AudioManager.Instance.PlaySFX(_enemyScriptableObject.ShotSound);
             _nextFire = Time.time + _enemyScriptableObject.FireRate;
             Instantiate(_enemyScriptableObject.BulletPrefab, FirePoint.position, Quaternion.identity);
         }

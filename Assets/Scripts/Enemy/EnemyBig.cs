@@ -43,6 +43,7 @@ public class EnemyBig : Enemy, IAttack
 
         if(Time.time > _nextFire)
         {
+            AudioManager.Instance.PlaySFX(_enemyScriptableObject.ShotSound);
             _nextFire = Time.time + _enemyScriptableObject.FireRate;
             Vector3 target = _player == null ? Vector3.down : _player.transform.position;
             Instantiate(_enemyScriptableObject.BulletPrefab, FirePoint.position, Quaternion.LookRotation(Vector3.forward, transform.position - target));
