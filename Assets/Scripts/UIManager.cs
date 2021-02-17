@@ -68,4 +68,10 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void ShowGameOverText(bool value)
+    {
+        _gameOverText.gameObject.SetActive(value);
+        _restartText.gameObject.SetActive(value);
+    }
+
 }
