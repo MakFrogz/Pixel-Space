@@ -67,6 +67,8 @@ public class SpawnManager : MonoBehaviour
                 newEnemy.transform.SetParent(_objectsContainer.transform, false);
                 if(GameManager.Instance.DestroyedEnemiesCount >= _destroyedEnemiesNumberForSpawnBoss)
                 {
+                    _canSpawnEnemies = false;
+                    _canSpawnAsteroids = false;
                     _destroyedEnemiesNumberForSpawnBoss += _stepDestroyedEnemiesNumberForNextSpawnBoss;
                     GameManager.Instance.DestroyedEnemiesCount = 0;
                     yield return new WaitForSeconds(_delayBetweenEvents);
@@ -106,8 +108,6 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnBoss()
     {
-        _canSpawnEnemies = false;
-        _canSpawnAsteroids = false;
         GameObject boss = Instantiate(GetRandomBoss());
         boss.transform.position = _spawnPoint.position;
     }

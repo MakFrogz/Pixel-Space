@@ -14,6 +14,8 @@ public abstract class Enemy : EnemyBase
         transform.position = new Vector2(Random.Range(-x, x), y);
     }
 
+    protected abstract void Move();
+
     protected override void OnDeath()
     {
         GameManager.Instance.DestroyedEnemiesCount++;

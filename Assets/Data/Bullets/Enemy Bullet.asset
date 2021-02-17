@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy Bullet
   m_EditorClassIdentifier: 
   TagString: Player
-  Speed: 5
+  Speed: 10
   Damage: 25
   Direction: -1
   ExplosionPrefab: {fileID: 8925422334815634955, guid: 02dc5c1fc65725f4a92ed6d868d66c3d, type: 3}

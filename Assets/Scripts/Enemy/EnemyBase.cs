@@ -6,17 +6,16 @@ public abstract class EnemyBase : MonoBehaviour
 {
     [SerializeField] protected EnemyScriptableObject _enemyScriptableObject;
 
+    public EnemyScriptableObject EnemyScriptableObject => _enemyScriptableObject;
+
     protected float _currentHealth;
     protected bool _isDeath;
 
     protected void Awake()
     {
-        Debug.Log("Enemy Base Awake");
         _currentHealth = _enemyScriptableObject.Health;
         _isDeath = false;
     }
-
-    protected abstract void Move();
 
     protected void OnTriggerEnter2D(Collider2D other)
     {

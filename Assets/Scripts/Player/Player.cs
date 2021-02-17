@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-
         _trailRenderer = GetComponentInChildren<TrailRenderer>();
         _shipRigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();

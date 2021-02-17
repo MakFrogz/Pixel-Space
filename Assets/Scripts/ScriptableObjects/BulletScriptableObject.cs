@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditorInternal;
 
 [CreateAssetMenu(fileName ="New Bullet Data", menuName ="Bullet/Create bullet")]
 public class BulletScriptableObject : ScriptableObject

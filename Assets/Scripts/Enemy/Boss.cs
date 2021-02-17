@@ -6,23 +6,32 @@ public abstract class Boss : EnemyBase
 {
     [SerializeField] protected Vector3 _startPosition;
     [SerializeField] protected int _dropAmount;
-  
-    protected bool _canMove;
+    [SerializeField] private Transform _firePoint;
+
+    protected Vector3 _direction;
+    protected float _boundX;
+    protected float _speed;
+    protected GameObject _player;
+
+    public Vector3 StartPosition => _startPosition;
+    public Transform FirePoint => _firePoint;
+    public Vector3 Direction { get; set; }
+    public float BoundX => _boundX;
+    public GameObject Player => _player;
+
+    public float Speed { get; private set; }
     protected new void Awake()
     {
         base.Awake();
-        _canMove = false;
+        Direction = Vector3.left;
+        Speed = _enemyScriptableObject.Speed;
     }
 
-    protected void IntroMove()
+    protected void Start()
     {
-        transform.position = Vector2.MoveTowards(transform.position, _startPosition, Time.deltaTime * _enemyScriptableObject.Speed);
-        if (transform.position == _startPosition)
-        {
-            _canMove = true;
-        }
+        _boundX = Background.Instance.GetBackgroundWidth();
+        _player = GameObject.FindGameObjectWithTag("Player");
     }
-
 
     protected override void OnCollision(Collider2D other)
     {
@@ -48,4 +57,8 @@ public abstract class Boss : EnemyBase
         }
     }
 
+    public void BossStartCoroutine(IEnumerator enumerator)
+    {
+        StartCoroutine(enumerator);
+    }
 }

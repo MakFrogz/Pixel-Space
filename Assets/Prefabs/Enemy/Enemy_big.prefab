@@ -105,8 +105,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 420125165
-  m_SortingLayer: 2
-  m_SortingOrder: -1
+  m_SortingLayer: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7823993351900353309, guid: 766a339323c69f644a5f4b063dd600fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -168,7 +168,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyScriptableObject: {fileID: 11400000, guid: 731e51d1a99d97949bbec89121609186, type: 2}
-  _boostPrefab: {fileID: 5230087772860035777, guid: ffef866b4cd919346a1c4f08f4b65c5f, type: 3}
   _firePoint: {fileID: 191449087}
 --- !u!95 &3342440346014728194
 Animator:
