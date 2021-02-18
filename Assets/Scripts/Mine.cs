@@ -9,6 +9,7 @@ public class Mine : MonoBehaviour
     [SerializeField] private float _radius;
     [SerializeField] private float _timeExplosion;
     [SerializeField] private GameObject _explosionPrefab;
+    [SerializeField] private AudioClip _mineSound;
     [SerializeField] private LayerMask _layerMask;
 
     private Animator _animator;
@@ -78,6 +79,17 @@ public class Mine : MonoBehaviour
             playerHealth.ApplyDamage(_damage);
         }
 
+    }
+
+
+    private void Beep()
+    {
+        AudioManager.Instance.PlaySFX(_mineSound);
+    }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmos()

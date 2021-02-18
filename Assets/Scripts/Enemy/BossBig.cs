@@ -5,7 +5,6 @@ using System;
 
 public class BossBig : Boss
 {
-    [SerializeField] private int _projectilesNum;
     [SerializeField] private GameObject _laser;
 
     private StateMachine _stateMachine;

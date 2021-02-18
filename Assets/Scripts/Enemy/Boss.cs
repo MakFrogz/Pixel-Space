@@ -9,22 +9,26 @@ public abstract class Boss : EnemyBase
     [SerializeField] private Transform _firePoint;
 
     protected Vector3 _direction;
+    protected GameObject _player;
     protected float _boundX;
     protected float _speed;
-    protected GameObject _player;
+    protected AudioClip _shotSound;
 
     public Vector3 StartPosition => _startPosition;
     public Transform FirePoint => _firePoint;
     public Vector3 Direction { get; set; }
-    public float BoundX => _boundX;
     public GameObject Player => _player;
-
+    public float BoundX => _boundX;
     public float Speed { get; private set; }
+
+    public AudioClip ShotSound { get; private set; }
+
     protected new void Awake()
     {
         base.Awake();
         Direction = Vector3.left;
         Speed = _enemyScriptableObject.Speed;
+        ShotSound = _enemyScriptableObject.ShotSound;
     }
 
     protected void Start()

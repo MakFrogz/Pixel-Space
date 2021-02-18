@@ -39,6 +39,7 @@ public class MassiveAttackState : BaseState
         for (int j = 0; j < 3; j++)
         {
             yield return new WaitForSeconds(0.5f);
+            AudioManager.Instance.PlaySFX(_boss.ShotSound);
             for (int i = 0; i < _projectilesNum; i++)
             {
                 UnityEngine.Object.Instantiate(_boss.EnemyScriptableObject.BulletPrefab, transform.position, Quaternion.Euler(new Vector3(0f, 0f, step * i + j * 10f)));
@@ -46,6 +47,5 @@ public class MassiveAttackState : BaseState
         }
         yield return new WaitForSeconds(1f);
         _nextState = typeof(SingleAttackState);
-        //_isCoroutineRunning = false;
     }
 }

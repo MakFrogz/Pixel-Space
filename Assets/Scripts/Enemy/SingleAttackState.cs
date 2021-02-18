@@ -35,6 +35,7 @@ public class SingleAttackState : BaseState
 
         if (Time.time > _nextFire)
         {
+            AudioManager.Instance.PlaySFX(_boss.ShotSound);
             _nextFire = Time.time + _boss.EnemyScriptableObject.FireRate;
             Vector3 target = _boss.Player == null ? Vector3.down : _boss.Player.transform.position;
             UnityEngine.Object.Instantiate(_boss.EnemyScriptableObject.BulletPrefab, _boss.FirePoint.position, Quaternion.LookRotation(Vector3.forward, transform.position - target));

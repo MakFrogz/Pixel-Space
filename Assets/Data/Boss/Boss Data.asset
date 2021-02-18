@@ -17,6 +17,7 @@ MonoBehaviour:
   Health: 500
   CollisionDamage: 0
   PointReward: 500
+  ShotSound: {fileID: 8300000, guid: e7cbe5daafadc2f4f9887e8f0f2330d1, type: 3}
   BulletPrefab: {fileID: 7894325551798927938, guid: 37cbfb0440709b24f948698d0bac23d1, type: 3}
   ExplosionPrefab: {fileID: 8925422334815634955, guid: 02dc5c1fc65725f4a92ed6d868d66c3d, type: 3}
   PowerUpPrefabs:
