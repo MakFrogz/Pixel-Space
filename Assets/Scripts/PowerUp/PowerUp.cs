@@ -7,6 +7,19 @@ public abstract class PowerUp : MonoBehaviour
     [SerializeField] protected PowerUpScriptableObject _boostScriptableObject;
     [SerializeField] protected string _boostName;
 
+    private void Start()
+    {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        float boundX = Background.Instance.GetBackgroundWidth() - spriteRenderer.bounds.size.x;
+        if(transform.position.x > boundX)
+        {
+            transform.position = new Vector3(boundX, transform.position.y, transform.position.z);
+        }else if(transform.position.x < -boundX)
+        {
+            transform.position = new Vector3(-boundX, transform.position.y, transform.position.z);
+        }
+    }
+
     private void FixedUpdate()
     {
         transform.Translate(Vector3.down * _boostScriptableObject.Speed * Time.fixedDeltaTime);

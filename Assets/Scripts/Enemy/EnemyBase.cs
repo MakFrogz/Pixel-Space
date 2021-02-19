@@ -11,9 +11,10 @@ public abstract class EnemyBase : MonoBehaviour
     protected float _currentHealth;
     protected bool _isDeath;
 
+    public float CurrentHealth { get { return _currentHealth; } set { _currentHealth = value; } }
     protected void Awake()
     {
-        _currentHealth = _enemyScriptableObject.Health;
+        _currentHealth = _enemyScriptableObject.Health * GameManager.Instance.MultiplierHealth;
         _isDeath = false;
     }
 

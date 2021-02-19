@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _pausePanel;
     public int Score { get; set; }
     public int DestroyedEnemiesCount { get; set; }
+    public float MultiplierHealth { get; private set; }
 
     public GameManagerInput _inputActions;
 
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        MultiplierHealth = 1;
         _inputActions = new GameManagerInput();
     }
     private void Start()
@@ -70,6 +72,7 @@ public class GameManager : MonoBehaviour
 
     public void OnBossDeath()
     {
+        MultiplierHealth += 0.25f;
         StartCoroutine(SpawnManager.Instance.ContinueSpawn());
     }
 
