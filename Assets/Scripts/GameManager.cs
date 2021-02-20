@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         UIManager.Instance.GameOverSequence();
+        AudioManager.Instance.GameOverMusic();
         IsGameOver = true;
     }
 

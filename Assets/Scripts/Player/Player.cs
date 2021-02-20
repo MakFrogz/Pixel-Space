@@ -114,8 +114,8 @@ public class Player : MonoBehaviour
 
     private IEnumerator DodgeRoutine()
     {
-        yield return new WaitForSeconds(0.3f);
-        _speed /= _playerScriptableObject.DodgeMultiplySpeed;
+        yield return new WaitForSeconds(0.5f);
+        _speed = _playerScriptableObject.Speed;
         _trailRenderer.emitting = false;
         _playerHealthController.IsInvulnerable = false;
         yield return new WaitForSeconds(0.2f);

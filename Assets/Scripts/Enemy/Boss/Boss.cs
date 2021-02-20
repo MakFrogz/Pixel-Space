@@ -5,14 +5,12 @@ using UnityEngine;
 public abstract class Boss : EnemyBase
 {
     [SerializeField] private BossScriptableObject _bossScriptableObject;
-    [SerializeField] protected Vector3 _startPosition;
     [SerializeField] private Transform _firePoint;
-
-
 
     private float _currentHealth;
     protected float _speed;
 
+    private Vector3 _startPosition;
     protected Vector3 _direction;
     protected float _boundX;
 
@@ -34,6 +32,8 @@ public abstract class Boss : EnemyBase
     protected void Start()
     {
         _boundX = Background.Instance.GetBackgroundWidth();
+        float y = Background.Instance.GetBackgroundHeigth() - (GetComponent<SpriteRenderer>().bounds.size.y / 2);
+        _startPosition = new Vector3(0f, y, 0f);
     }
 
     protected override void OnCollision(Collider2D other)
