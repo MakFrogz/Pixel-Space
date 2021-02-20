@@ -4,17 +4,9 @@ using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour
 {
-    [SerializeField] protected EnemyScriptableObject _enemyScriptableObject;
-
-    public EnemyScriptableObject EnemyScriptableObject => _enemyScriptableObject;
-
-    protected float _currentHealth;
     protected bool _isDeath;
-
-    public float CurrentHealth { get { return _currentHealth; } set { _currentHealth = value; } }
     protected void Awake()
     {
-        _currentHealth = _enemyScriptableObject.Health * GameManager.Instance.MultiplierHealth;
         _isDeath = false;
     }
 
@@ -32,49 +24,19 @@ public abstract class EnemyBase : MonoBehaviour
         }
     }
 
-    protected virtual void OnCollision (Collider2D other)
-    {
-        PlayerHealthController playerHealthController = other.GetComponent<PlayerHealthController>();
-        if (playerHealthController != null)
-        {
-            playerHealthController.ApplyDamage(_enemyScriptableObject.CollisionDamage);
-            OnDeath();
-        }
-    }
+    protected abstract void OnCollision(Collider2D other);
 
-    public void ApplyDamage(float damage)
-    {
-        if (_isDeath)
-        {
-            return;
-        }
-        _currentHealth -= damage;
-        if(_currentHealth <= 0)
-        {
-            if (GameManager.Instance != null)
-            {
-                GameManager.Instance.AddScore(_enemyScriptableObject.PointReward);
-                OnDrop();
-                OnDeath();
-            }
-        }
-    }
+    public abstract void ApplyDamage(float damage);
 
 
-
-    protected virtual void OnDeath()
-    {
-        _isDeath = true;
-        Instantiate(_enemyScriptableObject.ExplosionPrefab, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-    }
+    protected abstract void OnDeath();
 
     protected abstract void OnDrop();
 
-    protected GameObject GetRandomPowerUp()
+    protected GameObject GetRandomPowerUp(GameObject[] powerUpPrefabs)
     {
-        int powerUpIndex = Random.Range(0, _enemyScriptableObject.PowerUpPrefabs.Length);
-        return _enemyScriptableObject.PowerUpPrefabs[powerUpIndex];
+        int powerUpIndex = Random.Range(0, powerUpPrefabs.Length);
+        return powerUpPrefabs[powerUpIndex];
     }
     private void OnBecameInvisible()
     {

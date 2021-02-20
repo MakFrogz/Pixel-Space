@@ -264,7 +264,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2101591462
 PrefabInstance:
@@ -616,6 +616,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
+      propertyPath: _bossPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: _destroyedEnemiesNumberForSpawnBoss
       value: 1
       objectReference: {fileID: 0}
@@ -623,6 +627,14 @@ PrefabInstance:
       propertyPath: _stepDestroyedEnemiesNumberForNextSpawnBoss
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
+      propertyPath: _bossPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 5819783026654357432, guid: c8b4e81bc7d22b249a285d62ea728e4b, type: 3}
+    - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
+      propertyPath: _bossPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 5819783026654357432, guid: c8b4e81bc7d22b249a285d62ea728e4b, type: 3}
     - target: {fileID: 5977376027254897022, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -669,64 +681,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
---- !u!1001 &7013813173604157825
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7013813172889899397, guid: 65da0ad7e5e2137419df2881578c65f9, type: 3}
-      propertyPath: m_Name
-      value: Post Process Volume
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013813172889899397, guid: 65da0ad7e5e2137419df2881578c65f9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013813172889899399, guid: 65da0ad7e5e2137419df2881578c65f9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.43228966
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013813172889899399, guid: 65da0ad7e5e2137419df2881578c65f9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.93946266
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013813172889899399, guid: 65da0ad7e5e2137419df2881578c65f9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.8857664
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013813172889899399, guid: 65da0ad7e5e2137419df2881578c65f9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013813172889899399, guid: 65da0ad7e5e2137419df2881578c65f9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013813172889899399, guid: 65da0ad7e5e2137419df2881578c65f9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013813172889899399, guid: 65da0ad7e5e2137419df2881578c65f9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013813172889899399, guid: 65da0ad7e5e2137419df2881578c65f9, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013813172889899399, guid: 65da0ad7e5e2137419df2881578c65f9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013813172889899399, guid: 65da0ad7e5e2137419df2881578c65f9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013813172889899399, guid: 65da0ad7e5e2137419df2881578c65f9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 65da0ad7e5e2137419df2881578c65f9, type: 3}

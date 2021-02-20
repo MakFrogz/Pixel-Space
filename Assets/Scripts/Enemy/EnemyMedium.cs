@@ -18,10 +18,14 @@ public class EnemyMedium : Enemy, IAttack
         _direction = player.transform.position - transform.position;
     }
 
+    private void Update()
+    {
+        Attack();
+    }
+
     private void FixedUpdate()
     {
         Move();
-        Attack();
     }
 
     protected override void Move()

@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using BossBigNameSpace;
 
 public class BossBig : Boss
 {
     [SerializeField] private GameObject _laser;
 
     private StateMachine _stateMachine;
-    private new void Start()
+    protected new void Start()
     {
         base.Start();
         _laser.SetActive(false);
     }
 
-    private new void Awake()
+    protected new void Awake()
     {
         base.Awake();
         _stateMachine = GetComponent<StateMachine>();
@@ -23,11 +24,11 @@ public class BossBig : Boss
 
     private void InitializeStateMachine()
     {
-        Dictionary<Type, BaseState> states = new Dictionary<Type, BaseState>()
+        Dictionary<BossState, BaseState> states = new Dictionary<BossState, BaseState>()
         {
-            { typeof(IntroState), new IntroState(this)},
-            { typeof(SingleAttackState), new SingleAttackState(this)},
-            { typeof(MassiveAttackState), new MassiveAttackState(this)}
+            { BossState.Intro, new IntroState(this)},
+            { BossState.SingleAttack, new SingleAttackState(this)},
+            { BossState.MassiveAttack, new MassiveAttackState(this)}
         };
         _stateMachine.SetStates(states);
     }

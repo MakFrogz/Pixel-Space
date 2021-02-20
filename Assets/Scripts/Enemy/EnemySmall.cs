@@ -22,7 +22,7 @@ public class EnemySmall : Enemy
         float chance = Random.Range(0f, 100f);
         if (chance < _enemyScriptableObject.PowerUpDropChance)
         {
-            Instantiate(GetRandomPowerUp(), transform.position, Quaternion.identity);
+            Instantiate(GetRandomPowerUp(_enemyScriptableObject.PowerUpPrefabs), transform.position, Quaternion.identity);
         }
         else if (chance < _chanceToDropMine)
         {

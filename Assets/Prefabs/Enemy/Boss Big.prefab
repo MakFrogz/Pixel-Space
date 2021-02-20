@@ -363,11 +363,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2adeb6b3b7a5d488658da411a04cd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyScriptableObject: {fileID: 11400000, guid: 195cb700ea178cb4d9a85cce9b6ceced, type: 2}
+  _bossScriptableObject: {fileID: 11400000, guid: 2af7985c0a4c3814ea59ae87bbadfd02, type: 2}
   _startPosition: {x: 0, y: 5, z: 0}
-  _dropAmount: 3
   _firePoint: {fileID: 1510983604}
-  _projectilesNum: 10
   _laser: {fileID: 1147306840557021649}
 --- !u!114 &719884799
 MonoBehaviour:

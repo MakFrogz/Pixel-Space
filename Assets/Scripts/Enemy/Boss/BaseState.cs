@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public abstract class BaseState 
+public abstract class BaseState
 {
     protected GameObject gameObject;
     protected Transform transform;
@@ -15,5 +15,6 @@ public abstract class BaseState
     }
 
     public virtual void Enter() { }
-    public abstract Type Tick();
+    public abstract BossState Tick();
+    public virtual void Exit() { }
 }
