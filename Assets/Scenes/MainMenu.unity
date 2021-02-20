@@ -781,6 +781,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3258468508795559439, guid: 0bbb7d8c8d92e8e4fb850bd5f708d4e6, type: 3}
+      propertyPath: m_Name
+      value: Background_music
+      objectReference: {fileID: 0}
     - target: {fileID: 3258468509588015520, guid: 0bbb7d8c8d92e8e4fb850bd5f708d4e6, type: 3}
       propertyPath: m_Name
       value: Audio Manager

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1561201111513639780}
   - component: {fileID: 1561201111513639781}
   m_Layer: 0
-  m_Name: Background
+  m_Name: Background_music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9cf56e2090cddb499979ec01a4603bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameOverMusic: {fileID: 8300000, guid: d237cbcb98b5a734cbdfdbefb607649d, type: 3}
 --- !u!82 &1561201112842976462
 AudioSource:
   m_ObjectHideFlags: 0

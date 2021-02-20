@@ -411,10 +411,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6728562036909420727, guid: 08975021e951e1b43bffe559f443c4d0, type: 3}
-      propertyPath: _numProjectile
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08975021e951e1b43bffe559f443c4d0, type: 3}
 --- !u!1001 &1561201112740017424
@@ -481,10 +477,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1955006387635110868, guid: e458adeab716cb9438e0d2e7817a3185, type: 3}
-      propertyPath: orthographic size
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 1955006387833596138, guid: e458adeab716cb9438e0d2e7817a3185, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -542,14 +534,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5897633653685434746, guid: 7e2933922b38e6d45b8025508045fd1e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5897633654034495712, guid: 7e2933922b38e6d45b8025508045fd1e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5897633654064175202, guid: 7e2933922b38e6d45b8025508045fd1e, type: 3}
       propertyPath: m_Name
       value: Background
@@ -598,22 +582,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5897633654064175203, guid: 7e2933922b38e6d45b8025508045fd1e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5897633654064175203, guid: 7e2933922b38e6d45b8025508045fd1e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5897633654064175203, guid: 7e2933922b38e6d45b8025508045fd1e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5897633654085871150, guid: 7e2933922b38e6d45b8025508045fd1e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e2933922b38e6d45b8025508045fd1e, type: 3}
 --- !u!1001 &5977376026397295894
@@ -627,30 +595,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawn Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 5977376027254897008, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
-      propertyPath: _bossPrefabs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
-      propertyPath: _destroyedEnemiesNumberForSpawnBoss
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
-      propertyPath: _stepDestroyedEnemiesNumberForNextSpawnBoss
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
-      propertyPath: _bossPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
-      propertyPath: _bossPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 1742354359087517026, guid: c5794ff06c5bb8f42bf13cdb3c6cd922, type: 3}
     - target: {fileID: 5977376027254897022, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

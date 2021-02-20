@@ -151,6 +151,8 @@ MonoBehaviour:
   _timeBetweenAsteroids: 0.5
   _spawnPoint: {fileID: 5977376026385074773}
   _bossPrefabs:
+  - {fileID: 1742354359087517026, guid: c5794ff06c5bb8f42bf13cdb3c6cd922, type: 3}
+  - {fileID: 5819783026654357432, guid: c8b4e81bc7d22b249a285d62ea728e4b, type: 3}
   - {fileID: 1147306840801887009, guid: dba2f25c546cb714e9c0f2c8d27445c3, type: 3}
-  _destroyedEnemiesNumberForSpawnBoss: 50
+  _destroyedEnemiesNumberForSpawnBoss: 30
   _stepDestroyedEnemiesNumberForNextSpawnBoss: 5

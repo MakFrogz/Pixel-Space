@@ -33,7 +33,10 @@ public class GameManager : MonoBehaviour
     public void OnPause()
     {
         _pausePanel.SetActive(true);
-        UIManager.Instance.ShowGameOverText(false);
+        if (IsGameOver)
+        {
+            UIManager.Instance.ShowGameOverText(false);
+        }
         Time.timeScale = 0f;
     }
 
@@ -62,7 +65,10 @@ public class GameManager : MonoBehaviour
     public void Resume()
     {
         _pausePanel.SetActive(false);
-        UIManager.Instance.ShowGameOverText(true);
+        if (IsGameOver)
+        {
+            UIManager.Instance.ShowGameOverText(true);
+        }
         Time.timeScale = 1f;
     }
     public void LoadMainMenu()
