@@ -32,13 +32,13 @@ public class AudioManager : MonoBehaviour
         _background.Play();
     }
 
-    public void ChangeMusicVolume(float volume)
+    public void SetMusicVolume(float volume)
     {
         _background.volume = volume;
         PlayerPrefs.SetFloat("music", volume);
     }
 
-    public void ChangeSFXVolume(float volume)
+    public void SetSFXVolume(float volume)
     {
         _audioSource.volume = volume;
         PlayerPrefs.SetFloat("sfx", volume);

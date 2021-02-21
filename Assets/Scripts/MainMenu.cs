@@ -19,8 +19,8 @@ public class MainMenu : MonoBehaviour
         _currentPanel = _mainMenuPanel;
         _musicSlider.value = PlayerPrefs.GetFloat("music", 1f);
         _sfxSlider.value = PlayerPrefs.GetFloat("sfx", 1f);
-        _musicSlider.onValueChanged.AddListener(delegate { AudioManager.Instance.ChangeMusicVolume(_musicSlider.value); });
-        _sfxSlider.onValueChanged.AddListener(delegate { AudioManager.Instance.ChangeSFXVolume(_sfxSlider.value); });
+        _musicSlider.onValueChanged.AddListener(delegate { AudioManager.Instance.SetMusicVolume(_musicSlider.value); });
+        _sfxSlider.onValueChanged.AddListener(delegate { AudioManager.Instance.SetSFXVolume(_sfxSlider.value); });
     }
 
     public void StartGame()
