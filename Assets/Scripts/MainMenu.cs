@@ -8,6 +8,20 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _mainMenuPanel;
     [SerializeField] private GameObject _creditsPanel;
+    [SerializeField] private GameObject _settingsPanel;
+    [SerializeField] private Slider _musicSlider;
+    [SerializeField] private Slider _sfxSlider;
+
+    private GameObject _currentPanel;
+
+    private void Awake()
+    {
+        _currentPanel = _mainMenuPanel;
+        _musicSlider.value = PlayerPrefs.GetFloat("music", 1f);
+        _sfxSlider.value = PlayerPrefs.GetFloat("sfx", 1f);
+        _musicSlider.onValueChanged.AddListener(delegate { AudioManager.Instance.ChangeMusicVolume(_musicSlider.value); });
+        _sfxSlider.onValueChanged.AddListener(delegate { AudioManager.Instance.ChangeSFXVolume(_sfxSlider.value); });
+    }
 
     public void StartGame()
     {
@@ -16,14 +30,24 @@ public class MainMenu : MonoBehaviour
 
     public void ShowCredits()
     {
-        _mainMenuPanel.SetActive(false);
-        _creditsPanel.SetActive(true);
+        ShowCurrentPanel(_creditsPanel);
     }
 
     public void ShowMainMenu()
     {
-        _mainMenuPanel.SetActive(true);
-        _creditsPanel.SetActive(false);
+        ShowCurrentPanel(_mainMenuPanel);
+    }
+
+    public void ShowSettings()
+    {
+        ShowCurrentPanel(_settingsPanel);
+    }
+
+    private void ShowCurrentPanel(GameObject panel)
+    {
+        _currentPanel.SetActive(false);
+        _currentPanel = panel;
+        _currentPanel.SetActive(true);
     }
 
     public void Exit()

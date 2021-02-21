@@ -14,6 +14,10 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         _audioSource = GetComponent<AudioSource>();
         _background = GameObject.Find("Background_music").GetComponent<AudioSource>();
+        _background.volume = PlayerPrefs.GetFloat("music", 1f);
+        _audioSource.volume = PlayerPrefs.GetFloat("sfx", 1f);
+        Debug.Log("Music volume: " + _background.volume);
+        Debug.Log("SFX volume: " + _audioSource.volume);
     }
 
     public void PlaySFX(AudioClip audioClip)
@@ -26,5 +30,17 @@ public class AudioManager : MonoBehaviour
         _background.Stop();
         _background.clip = _gameOverMusic;
         _background.Play();
+    }
+
+    public void ChangeMusicVolume(float volume)
+    {
+        _background.volume = volume;
+        PlayerPrefs.SetFloat("music", volume);
+    }
+
+    public void ChangeSFXVolume(float volume)
+    {
+        _audioSource.volume = volume;
+        PlayerPrefs.SetFloat("sfx", volume);
     }
 }

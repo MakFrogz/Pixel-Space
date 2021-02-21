@@ -38,17 +38,6 @@ public class @MainMenuInput : IInputActionCollection, IDisposable
                     ""action"": ""Cancel Credits"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""eb7b9346-8618-4e6f-9308-10e68b877e81"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Cancel Credits"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
