@@ -1,0 +1,44 @@
+{
+    "name": "MainMenuInput",
+    "maps": [
+        {
+            "name": "MainMenu",
+            "id": "79fd8a2b-f233-42a3-958c-005f99cdfa62",
+            "actions": [
+                {
+                    "name": "Cancel Credits",
+                    "type": "Button",
+                    "id": "a29bd211-6cee-4ad8-ac84-02bf6fbbb214",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f3e50edb-54f0-4f03-ae4a-4240616fa1c3",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel Credits",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eb7b9346-8618-4e6f-9308-10e68b877e81",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel Credits",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
