@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &444655367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 444655367, guid: 0ae38c02937c2fd4d938974f41a28eb8, type: 3}
+  m_PrefabInstance: {fileID: 2101591462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &519420031 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1955006387635110868, guid: e458adeab716cb9438e0d2e7817a3185, type: 3}
@@ -297,6 +302,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1681051950}
+    - target: {fileID: 4136963452231781084, guid: 0ae38c02937c2fd4d938974f41a28eb8, type: 3}
+      propertyPath: _playerUIPanel
+      value: 
+      objectReference: {fileID: 444655367}
     - target: {fileID: 4136963452231781085, guid: 0ae38c02937c2fd4d938974f41a28eb8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 746.41327

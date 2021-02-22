@@ -33,9 +33,10 @@ public class GameManager : MonoBehaviour
     public void OnPause()
     {
         _pausePanel.SetActive(true);
+        UIManager.Instance.ShowPlayerUIPanel(false);
         if (IsGameOver)
         {
-            UIManager.Instance.ShowGameOverText(false);
+            UIManager.Instance.GameOverSequence(false);
         }
         Time.timeScale = 0f;
     }
@@ -50,7 +51,12 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        UIManager.Instance.GameOverSequence();
+        int highScore = PlayerPrefs.GetInt("highscore", 0);
+        if(highScore < Score)
+        {
+            PlayerPrefs.SetInt("highscore", Score);
+        }
+        UIManager.Instance.GameOverSequence(true);
         AudioManager.Instance.GameOverMusic();
         IsGameOver = true;
     }
@@ -65,9 +71,10 @@ public class GameManager : MonoBehaviour
     public void Resume()
     {
         _pausePanel.SetActive(false);
+        UIManager.Instance.ShowPlayerUIPanel(true);
         if (IsGameOver)
         {
-            UIManager.Instance.ShowGameOverText(true);
+            UIManager.Instance.GameOverSequence(true);
         }
         Time.timeScale = 1f;
     }
