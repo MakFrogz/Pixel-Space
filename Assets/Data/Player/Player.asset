@@ -15,11 +15,11 @@ MonoBehaviour:
   Health: 100
   Energy: 100
   EnergyRestoreTime: 1
-  Speed: 4
+  Speed: 20
   FireRate: 0.5
   DodgeMultiplySpeed: 5
   DodgeCost: 30
   MaxEnergyRestoreTime: 0.5
-  MaxSpeed: 10
+  MaxSpeed: 50
   MaxFireRate: 0.2
   MaxProjectiles: 7

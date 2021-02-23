@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca099056ffb13f44fb072d52ac5a1bda, type: 3}
   m_Name: Enemy_small
   m_EditorClassIdentifier: 
-  Speed: 6
+  Speed: 7
   FireRate: 0
   Health: 25
   CollisionDamage: 30
   PointReward: 100
+  ShotSound: {fileID: 0}
   BulletPrefab: {fileID: 0}
   ExplosionPrefab: {fileID: 8925422334815634955, guid: 02dc5c1fc65725f4a92ed6d868d66c3d, type: 3}
   PowerUpPrefabs:
   - {fileID: 5865254886855606712, guid: 3946cc91c50b0c54db934b934a9eabc1, type: 3}
   - {fileID: 2682865968987943068, guid: 556db0cd791693448826cfb054971eb5, type: 3}
-  PowerUpDropChance: 5
+  PowerUpDropChance: 7.5

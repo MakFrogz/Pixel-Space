@@ -372,6 +372,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1341128281403828928, guid: 08975021e951e1b43bffe559f443c4d0, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341128281403828928, guid: 08975021e951e1b43bffe559f443c4d0, type: 3}
+      propertyPath: m_LinearDrag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1341128281403828930, guid: 08975021e951e1b43bffe559f443c4d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.26
@@ -603,6 +611,26 @@ PrefabInstance:
     - target: {fileID: 5977376027254897008, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: m_Name
       value: Spawn Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
+      propertyPath: _spawnEnemyRateFromScore.m_Curve.Array.data[0].inSlope
+      value: -0.000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
+      propertyPath: _spawnEnemyRateFromScore.m_Curve.Array.data[0].outSlope
+      value: -0.000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
+      propertyPath: _spawnEnemyRateFromScore.m_Curve.Array.data[1].time
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
+      propertyPath: _spawnEnemyRateFromScore.m_Curve.Array.data[1].inSlope
+      value: -0.000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
+      propertyPath: _spawnEnemyRateFromScore.m_Curve.Array.data[1].outSlope
+      value: -0.000012
       objectReference: {fileID: 0}
     - target: {fileID: 5977376027254897022, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: m_LocalPosition.x

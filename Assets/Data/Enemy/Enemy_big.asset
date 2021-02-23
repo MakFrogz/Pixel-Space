@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca099056ffb13f44fb072d52ac5a1bda, type: 3}
   m_Name: Enemy_big
   m_EditorClassIdentifier: 
-  Speed: 2
+  Speed: 4
   FireRate: 1.5
   Health: 75
   CollisionDamage: 20
@@ -25,4 +25,4 @@ MonoBehaviour:
   - {fileID: 2682865968987943068, guid: 556db0cd791693448826cfb054971eb5, type: 3}
   - {fileID: 8735706413879268460, guid: 53b786c1de9e68845b62870de92d7765, type: 3}
   - {fileID: 3563747794087258883, guid: d53f31431eb429944bbbbbd82366cf60, type: 3}
-  PowerUpDropChance: 10
+  PowerUpDropChance: 15

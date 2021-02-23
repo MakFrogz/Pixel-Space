@@ -147,7 +147,7 @@ MonoBehaviour:
   _minAsteroidsNumber: 30
   _maxAsteroidsNumber: 50
   _minSpawnAsteroidsTime: 60
-  _maxSpawnAsteroidsTime: 180
+  _maxSpawnAsteroidsTime: 120
   _timeBetweenAsteroids: 0.5
   _spawnPoint: {fileID: 5977376026385074773}
   _bossPrefabs:

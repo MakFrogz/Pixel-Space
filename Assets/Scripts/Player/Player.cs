@@ -73,8 +73,10 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        _shipRigidbody2D.velocity = (_direction.normalized * _speed);
-        bool hasHorizontalVelocity = Mathf.Abs(_shipRigidbody2D.velocity.x) > Mathf.Epsilon;
+        //_shipRigidbody2D.velocity = (_direction.normalized * _speed);
+        //bool hasHorizontalVelocity = Mathf.Abs(_shipRigidbody2D.velocity.x) > Mathf.Epsilon;
+        _shipRigidbody2D.AddForce(_direction.normalized * _speed, ForceMode2D.Force);
+        bool hasHorizontalVelocity = Mathf.Abs(_shipRigidbody2D.velocity.x) > 0.2f;
         _animator.SetBool("isTurn", hasHorizontalVelocity);
     }
 
