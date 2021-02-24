@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; set; }
 
     [SerializeField] private GameObject _pausePanel;
+    
+    public GameManagerInput _inputActions;
+    private Player _player;
+
     public int Score { get; set; }
     public int DestroyedEnemiesCount { get; set; }
     public float MultiplierHealth { get; private set; }
-
-    public GameManagerInput _inputActions;
-
     public bool IsGameOver { get; private set; }
-
 
     private void Awake()
     {
@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         _inputActions.Gamemanager.Restart.performed += ctx => OnRestart();
         _inputActions.Gamemanager.Pause.performed += ctx => OnPause();
     }
@@ -33,12 +34,17 @@ public class GameManager : MonoBehaviour
     public void OnPause()
     {
         _pausePanel.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(_pausePanel.transform.GetChild(0).gameObject);
         UIManager.Instance.ShowPlayerUIPanel(false);
         if (IsGameOver)
         {
             UIManager.Instance.GameOverSequence(false);
         }
         Time.timeScale = 0f;
+        if(_player != null)
+        {
+            _player.DisableInput();
+        }
     }
 
     public void OnRestart()
@@ -71,12 +77,17 @@ public class GameManager : MonoBehaviour
     public void Resume()
     {
         _pausePanel.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
         UIManager.Instance.ShowPlayerUIPanel(true);
         if (IsGameOver)
         {
             UIManager.Instance.GameOverSequence(true);
         }
         Time.timeScale = 1f;
+        if(_player != null)
+        {
+            _player.EnableInput();
+        }
     }
     public void LoadMainMenu()
     {

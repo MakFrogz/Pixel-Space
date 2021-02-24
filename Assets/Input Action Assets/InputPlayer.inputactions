@@ -1,5 +1,5 @@
 {
-    "name": "PlayerInput",
+    "name": "InputPlayer",
     "maps": [
         {
             "name": "Player",
@@ -27,7 +27,7 @@
                     "id": "315d0c16-4366-48c8-a2fd-f8d292ad5d68",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": ""
                 },
                 {
                     "name": "Join",

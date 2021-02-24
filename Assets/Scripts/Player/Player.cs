@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D _shipRigidbody2D;
     private SpriteRenderer _spriteRenderer;
     private TrailRenderer _trailRenderer;
+    private PlayerInput _playerInput;
 
     private float _speed;
     private Vector3 _direction;
@@ -26,23 +27,19 @@ public class Player : MonoBehaviour
         _shipRigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-
+        _playerInput = GetComponent<PlayerInput>();
         _playerHealthController = GetComponent<PlayerHealthController>();
         _playerEnergyController = GetComponent<PlayerEnergyController>();
 
         _speed = _playerScriptableObject.Speed;
         _canDodge = true;
-
         _trailRenderer.emitting = false;
-        
     }
 
     void Update()
     {
         MovementInput();
     }
-
-
 
     private void FixedUpdate()
     {
@@ -73,8 +70,6 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        //_shipRigidbody2D.velocity = (_direction.normalized * _speed);
-        //bool hasHorizontalVelocity = Mathf.Abs(_shipRigidbody2D.velocity.x) > Mathf.Epsilon;
         _shipRigidbody2D.AddForce(_direction.normalized * _speed, ForceMode2D.Force);
         bool hasHorizontalVelocity = Mathf.Abs(_shipRigidbody2D.velocity.x) > 0.2f;
         _animator.SetBool("isTurn", hasHorizontalVelocity);
@@ -114,6 +109,7 @@ public class Player : MonoBehaviour
         }
     }
 
+
     private IEnumerator DodgeRoutine()
     {
         yield return new WaitForSeconds(0.5f);
@@ -124,4 +120,13 @@ public class Player : MonoBehaviour
         _canDodge = true;
     }
 
+    public void EnableInput()
+    {
+        _playerInput.ActivateInput();
+    }
+
+    public void DisableInput()
+    {
+        _playerInput.DeactivateInput();
+    }
 }

@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/GameManagerInput.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Input Action Assets/GameManagerInput.inputactions'
 
 using System;
 using System.Collections;
@@ -50,7 +50,7 @@ public class @GameManagerInput : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d790d68e-afe3-4f51-b09c-c483829594b2"",
-                    ""path"": ""<Gamepad>/start"",
+                    ""path"": ""<Gamepad>/select"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -72,7 +72,7 @@ public class @GameManagerInput : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""430e8c12-78ce-42a9-b3f2-c7a7de414c27"",
-                    ""path"": ""<Gamepad>/select"",
+                    ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
