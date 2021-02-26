@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
 
 public class Player : MonoBehaviour
 {
@@ -34,11 +35,20 @@ public class Player : MonoBehaviour
         _speed = _playerScriptableObject.Speed;
         _canDodge = true;
         _trailRenderer.emitting = false;
+        InputUser.onChange += delegate { UIManager.Instance.SetRestartText(_playerInput.currentControlScheme); };
     }
 
     void Update()
     {
         MovementInput();
+        if (GameManager.Instance.IsPause)
+        {
+            _playerInput.currentActionMap.Disable();
+        }
+        else
+        {
+            _playerInput.currentActionMap.Enable();
+        }
     }
 
     private void FixedUpdate()
@@ -120,13 +130,13 @@ public class Player : MonoBehaviour
         _canDodge = true;
     }
 
-    public void EnableInput()
+    private void OnEnable()
     {
-        _playerInput.ActivateInput();
+        _playerInput.currentActionMap.Enable();
     }
 
-    public void DisableInput()
+    private void OnDisable()
     {
-        _playerInput.DeactivateInput();
+        _playerInput.currentActionMap.Disable();
     }
 }

@@ -3,48 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; set; }
 
-    [SerializeField] private GameObject _pausePanel;
-    
-    public GameManagerInput _inputActions;
-    private Player _player;
-
     public int Score { get; set; }
     public int DestroyedEnemiesCount { get; set; }
     public float MultiplierHealth { get; private set; }
     public bool IsGameOver { get; private set; }
+    public bool IsPause { get; set; }
+
+    private GameManagerInputs _inputActions;
 
     private void Awake()
     {
         Instance = this;
         MultiplierHealth = 1;
-        _inputActions = new GameManagerInput();
-    }
-    private void Start()
-    {
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        _inputActions.Gamemanager.Restart.performed += ctx => OnRestart();
-        _inputActions.Gamemanager.Pause.performed += ctx => OnPause();
+        _inputActions = new GameManagerInputs();
+        _inputActions.GameManager.Pause.performed += ctx => OnPause();
+        _inputActions.GameManager.Restart.performed += ctx => OnRestart();
     }
 
     public void OnPause()
     {
-        _pausePanel.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(_pausePanel.transform.GetChild(0).gameObject);
+        UIManager.Instance.ShowPauseMenu(true);
         UIManager.Instance.ShowPlayerUIPanel(false);
         if (IsGameOver)
         {
             UIManager.Instance.GameOverSequence(false);
         }
         Time.timeScale = 0f;
-        if(_player != null)
-        {
-            _player.DisableInput();
-        }
+        IsPause = true;
     }
 
     public void OnRestart()
@@ -76,18 +67,14 @@ public class GameManager : MonoBehaviour
     
     public void Resume()
     {
-        _pausePanel.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(null);
+        UIManager.Instance.ShowPauseMenu(false, null);
         UIManager.Instance.ShowPlayerUIPanel(true);
         if (IsGameOver)
         {
             UIManager.Instance.GameOverSequence(true);
         }
         Time.timeScale = 1f;
-        if(_player != null)
-        {
-            _player.EnableInput();
-        }
+        IsPause = false;
     }
     public void LoadMainMenu()
     {
@@ -101,14 +88,14 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnManager.Instance.ContinueSpawn());
     }
 
-
     private void OnEnable()
     {
-        _inputActions.Gamemanager.Enable();
+        _inputActions.GameManager.Enable();
     }
 
     private void OnDisable()
     {
-        _inputActions.Gamemanager.Disable();
+        _inputActions.GameManager.Disable();
     }
+
 }

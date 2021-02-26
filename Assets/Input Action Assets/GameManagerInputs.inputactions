@@ -1,0 +1,74 @@
+{
+    "name": "GameManagerInputs",
+    "maps": [
+        {
+            "name": "GameManager",
+            "id": "6ac81785-9ec2-4971-a8c8-7fcd33d6d555",
+            "actions": [
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "06ff3a4a-cf1a-4478-83cf-8bde9e23f008",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Restart",
+                    "type": "Button",
+                    "id": "159cabb6-1181-4992-b762-9d5f594b09cc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "04049754-a498-4ccd-a922-6cae98a3b434",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8730c95c-3218-418c-86ea-8d572fd0d8df",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ca22d8d3-46d7-4a57-9e65-6bce5830bc28",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "73ce0be0-095d-4ae1-ac0d-3b711d1953a8",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

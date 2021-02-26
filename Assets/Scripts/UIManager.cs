@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject _scorePanel;
     [SerializeField] private GameObject _playerUIPanel;
+    [SerializeField] private GameObject _pausePanel;
 
     public static UIManager Instance { get; set; }
     private void Awake()
@@ -37,6 +39,22 @@ public class UIManager : MonoBehaviour
     {
         _scoreText.text = "Score: " + playerScore.ToString();
         _scoreResultText.text = playerScore.ToString();
+    }
+
+    public void SetRestartText(string controlName)
+    {
+        switch (controlName)
+        {
+            case "Keyboard":
+                _restartText.text = "Press  R  key  to  restart  level";
+                break;
+            case "Gamepad":
+                _restartText.text = "Press  Select  key  to  restart  level";
+                break;
+            default:
+                Debug.LogError("Unkhown  control:" + (controlName == null? "NULL" : controlName)); ;
+                break;
+        }
     }
 
     public void SetMaxHealthBar(float maxHealth)
@@ -71,5 +89,17 @@ public class UIManager : MonoBehaviour
     public void ShowPlayerUIPanel(bool value)
     {
         _playerUIPanel.SetActive(value);
+    }
+
+    public void ShowPauseMenu(bool val)
+    {
+        _pausePanel.SetActive(val);
+        EventSystem.current.SetSelectedGameObject(_pausePanel.transform.GetChild(0).gameObject);
+    }
+
+    public void ShowPauseMenu(bool val, GameObject _gameObject)
+    {
+        _pausePanel.SetActive(val);
+        EventSystem.current.SetSelectedGameObject(_gameObject);
     }
 }

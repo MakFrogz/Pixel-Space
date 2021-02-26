@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private Text _gameTitle;
     [SerializeField] private GameObject _mainMenuPanel;
     [SerializeField] private GameObject _creditsPanel;
     [SerializeField] private GameObject _settingsPanel;
@@ -14,6 +17,7 @@ public class MainMenu : MonoBehaviour
 
     private GameObject _currentPanel;
 
+    private MainMenuInputs _inputActions;
     private void Awake()
     {
         _currentPanel = _mainMenuPanel;
@@ -21,6 +25,8 @@ public class MainMenu : MonoBehaviour
         _sfxSlider.value = PlayerPrefs.GetFloat("sfx", 1f);
         _musicSlider.onValueChanged.AddListener(delegate { AudioManager.Instance.SetMusicVolume(_musicSlider.value); });
         _sfxSlider.onValueChanged.AddListener(delegate { AudioManager.Instance.SetSFXVolume(_sfxSlider.value); });
+        _inputActions = new MainMenuInputs();
+        _inputActions.MainMenu.Cancel.performed += ctx => ShowMainMenu();
     }
 
     public void StartGame()
@@ -30,17 +36,21 @@ public class MainMenu : MonoBehaviour
 
     public void ShowCredits()
     {
+        _gameTitle.gameObject.SetActive(false);
         ShowCurrentPanel(_creditsPanel);
     }
 
     public void ShowMainMenu()
     {
+        _gameTitle.gameObject.SetActive(true);
         ShowCurrentPanel(_mainMenuPanel);
+        EventSystem.current.SetSelectedGameObject(_currentPanel.transform.GetChild(0).gameObject);
     }
 
     public void ShowSettings()
     {
         ShowCurrentPanel(_settingsPanel);
+        EventSystem.current.SetSelectedGameObject(_currentPanel.transform.GetChild(0).gameObject);
     }
 
     private void ShowCurrentPanel(GameObject panel)
@@ -53,5 +63,15 @@ public class MainMenu : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+
+    private void OnEnable()
+    {
+        _inputActions.MainMenu.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _inputActions.MainMenu.Disable();
     }
 }
