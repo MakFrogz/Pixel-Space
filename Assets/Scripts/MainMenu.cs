@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour
         _musicSlider.onValueChanged.AddListener(delegate { AudioManager.Instance.SetMusicVolume(_musicSlider.value); });
         _sfxSlider.onValueChanged.AddListener(delegate { AudioManager.Instance.SetSFXVolume(_sfxSlider.value); });
         _inputActions = new MainMenuInputs();
-        _inputActions.MainMenu.Cancel.performed += ctx => ShowMainMenu();
+        _inputActions.UI.Cancel.performed += ctx => ShowMainMenu();
     }
 
     public void StartGame()
@@ -67,11 +67,11 @@ public class MainMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        _inputActions.MainMenu.Enable();
+        _inputActions.UI.Enable();
     }
 
     private void OnDisable()
     {
-        _inputActions.MainMenu.Disable();
+        _inputActions.UI.Disable();
     }
 }

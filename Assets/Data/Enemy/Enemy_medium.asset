@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca099056ffb13f44fb072d52ac5a1bda, type: 3}
   m_Name: Enemy_medium
   m_EditorClassIdentifier: 
-  Speed: 5
-  FireRate: 2
-  Health: 50
+  Speed: 3
+  FireRate: 3
+  Health: 20
   CollisionDamage: 20
   PointReward: 150
-  ShotSound: {fileID: 8300000, guid: 784950b3c55d7e04c9fe6a2010b66706, type: 3}
+  ShotSound: {fileID: 8300000, guid: e7cbe5daafadc2f4f9887e8f0f2330d1, type: 3}
   BulletPrefab: {fileID: 7894325551798927938, guid: 37cbfb0440709b24f948698d0bac23d1, type: 3}
   ExplosionPrefab: {fileID: 8925422334815634955, guid: 02dc5c1fc65725f4a92ed6d868d66c3d, type: 3}
   PowerUpPrefabs:

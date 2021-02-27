@@ -8,7 +8,7 @@ public abstract class Boss : EnemyBase
     [SerializeField] private Transform _firePoint;
 
     private float _currentHealth;
-    protected float _speed;
+    //protected float _speed;
 
     private Vector3 _startPosition;
     protected Vector3 _direction;
@@ -24,9 +24,9 @@ public abstract class Boss : EnemyBase
     protected new void Awake()
     {
         base.Awake();
-        _currentHealth = _bossScriptableObject.Health * GameManager.Instance.MultiplierHealth;
+        _currentHealth = _bossScriptableObject.Health * GameManager.Instance.Multiplier;
         Direction = Vector3.left;
-        Speed = _bossScriptableObject.Speed;
+        Speed = _bossScriptableObject.Speed * GameManager.Instance.Multiplier;
     }
 
     protected void Start()
@@ -56,7 +56,7 @@ public abstract class Boss : EnemyBase
         {
             if (GameManager.Instance != null)
             {
-                GameManager.Instance.AddScore(_bossScriptableObject.PointReward);
+                GameManager.Instance.AddScore(Mathf.RoundToInt(_bossScriptableObject.PointReward * GameManager.Instance.Multiplier) );
                 OnDrop();
                 OnDeath();
             }

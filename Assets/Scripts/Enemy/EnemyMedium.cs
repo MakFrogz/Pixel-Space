@@ -30,7 +30,7 @@ public class EnemyMedium : Enemy, IAttack
 
     protected override void Move()
     {
-        transform.Translate(_direction.normalized * _enemyScriptableObject.Speed * Time.fixedDeltaTime);
+        transform.Translate(_direction.normalized * _speed * Time.fixedDeltaTime);
     }
     public void Attack()
     {
@@ -47,7 +47,7 @@ public class EnemyMedium : Enemy, IAttack
         if (Time.time > _nextFire)
         {
             AudioManager.Instance.PlaySFX(_enemyScriptableObject.ShotSound);
-            _nextFire = Time.time + _enemyScriptableObject.FireRate;
+            _nextFire = Time.time + _fireRate;
             Instantiate(_enemyScriptableObject.BulletPrefab, FirePoint.position, Quaternion.identity);
         }
     }

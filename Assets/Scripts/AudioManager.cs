@@ -27,6 +27,7 @@ public class AudioManager : MonoBehaviour
 
     public void GameOverMusic()
     {
+        _audioSource.Stop();
         _background.Stop();
         _background.clip = _gameOverMusic;
         _background.Play();

@@ -21,6 +21,7 @@ namespace BossBigNameSpace
         {
             _nextStateTime = UnityEngine.Random.Range(10f, 15f);
             _player = GameObject.FindGameObjectWithTag("Player");
+            _nextFire = Time.time + _boss.BossScriptableObject.FireRate;
         }
 
         public override BossState Tick()

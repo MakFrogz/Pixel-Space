@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public int Score { get; set; }
     public int DestroyedEnemiesCount { get; set; }
-    public float MultiplierHealth { get; private set; }
+    public float Multiplier { get; private set; }
     public bool IsGameOver { get; private set; }
     public bool IsPause { get; set; }
 
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        MultiplierHealth = 1;
+        Multiplier = 1;
         _inputActions = new GameManagerInputs();
         _inputActions.GameManager.Pause.performed += ctx => OnPause();
         _inputActions.GameManager.Restart.performed += ctx => OnRestart();
@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
 
     public void OnBossDeath()
     {
-        MultiplierHealth += 0.25f;
+        Multiplier += 0.15f;
         StartCoroutine(SpawnManager.Instance.ContinueSpawn());
     }
 

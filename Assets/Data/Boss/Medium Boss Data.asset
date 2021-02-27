@@ -26,4 +26,4 @@ MonoBehaviour:
   - {fileID: 2746500683872137002, guid: 3a5a7bb0f2bb4da42843e4eb4669159e, type: 3}
   - {fileID: 3141964748094940053, guid: c4f00fa214870a649b6c31717c037911, type: 3}
   - {fileID: 5936964315628909440, guid: b6db8d95df814b44ca57930fc03d8055, type: 3}
-  DropAmount: 3
+  DropAmount: 4

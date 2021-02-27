@@ -17,6 +17,7 @@ namespace BossSmallNameSpace
         public override void Enter()
         {
             _nextStateTime = Random.Range(10f, 15f);
+            _nextFire = Time.time + _boss.BossScriptableObject.FireRate;
         }
 
         public override BossState Tick()

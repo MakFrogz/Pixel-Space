@@ -380,8 +380,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -796}
-  m_SizeDelta: {x: 455, y: 307}
+  m_AnchoredPosition: {x: 0, y: -821}
+  m_SizeDelta: {x: 455, y: 357}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &519317003
 MonoBehaviour:
@@ -426,7 +426,9 @@ MonoBehaviour:
 
     bubaproducer
 
-    V-ktor'
+    V-ktor
+
+    beerbelly38'
 --- !u!222 &519317004
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -699,7 +701,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Programmers
+  m_Text: Developers
 --- !u!222 &604918871
 CanvasRenderer:
   m_ObjectHideFlags: 0

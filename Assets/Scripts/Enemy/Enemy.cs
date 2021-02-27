@@ -9,18 +9,24 @@ public abstract class Enemy : EnemyBase
     protected SpriteRenderer _spriteRenderer;
 
     protected float _currentHealth;
+    protected float _speed;
+    protected float _fireRate;
 
+    protected float _boundY;
     private new void Awake()
     {
         base.Awake();
-        _currentHealth = _enemyScriptableObject.Health * GameManager.Instance.MultiplierHealth;
+        _currentHealth = _enemyScriptableObject.Health * GameManager.Instance.Multiplier;
+        _speed = _enemyScriptableObject.Speed * GameManager.Instance.Multiplier;
+        _fireRate = _enemyScriptableObject.FireRate / GameManager.Instance.Multiplier;
     }
 
     protected void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         float x = Background.Instance.GetBackgroundWidth() - (_spriteRenderer.bounds.size.x / 2);
-        float y = Background.Instance.GetBackgroundHeigth() + (_spriteRenderer.bounds.size.y * 2);
+        float y = Background.Instance.GetBackgroundHeigth() + (_spriteRenderer.bounds.size.y / 2) - 0.1f;
+        _boundY = y;
         transform.position = new Vector2(Random.Range(-x, x), y);
     }
 
@@ -48,7 +54,7 @@ public abstract class Enemy : EnemyBase
         {
             if (GameManager.Instance != null)
             {
-                GameManager.Instance.AddScore(_enemyScriptableObject.PointReward);
+                GameManager.Instance.AddScore(Mathf.RoundToInt(_enemyScriptableObject.PointReward * GameManager.Instance.Multiplier));
                 OnDrop();
                 OnDeath();
             }

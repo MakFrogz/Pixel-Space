@@ -7,9 +7,9 @@ public class EnemyBig : Enemy, IAttack
     [SerializeField] private Transform _firePoint;
     public Transform FirePoint { get { return _firePoint; } set { _firePoint = value; } }
 
-    private float _nextFire;
     private GameObject _player;
 
+    private float _nextFire;
 
     private new void Start()
     {
@@ -25,7 +25,7 @@ public class EnemyBig : Enemy, IAttack
 
     protected override void Move()
     {
-        transform.Translate(Vector3.down * _enemyScriptableObject.Speed * Time.fixedDeltaTime);
+        transform.Translate(Vector3.down * _speed * Time.fixedDeltaTime);
     }
 
     public void Attack()
@@ -44,7 +44,7 @@ public class EnemyBig : Enemy, IAttack
         if(Time.time > _nextFire)
         {
             AudioManager.Instance.PlaySFX(_enemyScriptableObject.ShotSound);
-            _nextFire = Time.time + _enemyScriptableObject.FireRate;
+            _nextFire = Time.time + _fireRate;
             Vector3 target = _player == null ? Vector3.down : _player.transform.position;
             Instantiate(_enemyScriptableObject.BulletPrefab, FirePoint.position, Quaternion.LookRotation(Vector3.forward, transform.position - target));
         }

@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _playerUIPanel;
     [SerializeField] private GameObject _pausePanel;
 
+
+    private string _restartString;
     public static UIManager Instance { get; set; }
     private void Awake()
     {
@@ -27,6 +29,7 @@ public class UIManager : MonoBehaviour
         _highScoreResultText.text = PlayerPrefs.GetInt("highscore", 0).ToString();
         _scoreText.text = "Score: 0";
         _scoreResultText.text = "0";
+        _restartString = "";
     }
 
     void Start()
@@ -46,10 +49,10 @@ public class UIManager : MonoBehaviour
         switch (controlName)
         {
             case "Keyboard":
-                _restartText.text = "Press  R  key  to  restart  level";
+                _restartString = "Press  R  key  to  restart  level";
                 break;
             case "Gamepad":
-                _restartText.text = "Press  Select  key  to  restart  level";
+                _restartString = "Press  Select  key  to  restart  level";
                 break;
             default:
                 Debug.LogError("Unkhown  control:" + (controlName == null? "NULL" : controlName)); ;
@@ -81,6 +84,7 @@ public class UIManager : MonoBehaviour
     public void GameOverSequence(bool val)
     {
         _gameOverText.gameObject.SetActive(val);
+        _restartText.text = _restartString;
         _restartText.gameObject.SetActive(val);
         _scorePanel.SetActive(val);
         ShowPlayerUIPanel(false);

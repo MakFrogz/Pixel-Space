@@ -25,7 +25,6 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private float _timeBetweenAsteroids;
 
     [Header("Boss Settings")]
-    [SerializeField] private Transform _spawnPoint;
     [SerializeField] private GameObject[] _bossPrefabs;
     [SerializeField] private int _destroyedEnemiesNumberForSpawnBoss;
     [SerializeField] private int _stepDestroyedEnemiesNumberForNextSpawnBoss;
@@ -109,7 +108,8 @@ public class SpawnManager : MonoBehaviour
     private void SpawnBoss()
     {
         GameObject boss = Instantiate(GetRandomBoss());
-        boss.transform.position = _spawnPoint.position;
+        float y = Background.Instance.GetBackgroundHeigth() + (boss.GetComponent<SpriteRenderer>().bounds.size.y / 2) - 0.1f;
+        boss.transform.position = new Vector3(0f, y, 0f);
     }
 
     private GameObject GetRandomBoss()

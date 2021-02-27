@@ -7,6 +7,7 @@ public class EnemySmall : Enemy
     [SerializeField] private GameObject _minePrefab;
     [Range(0, 100)]
     [SerializeField] private float _chanceToDropMine;
+
     private void FixedUpdate()
     {
         Move();
@@ -14,7 +15,7 @@ public class EnemySmall : Enemy
 
     protected override void Move()
     {
-        transform.Translate(Vector3.down * _enemyScriptableObject.Speed * Time.fixedDeltaTime);
+        transform.Translate(Vector3.down * _speed * Time.fixedDeltaTime);
     }
 
     protected override void OnDrop()
