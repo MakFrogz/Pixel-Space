@@ -63,7 +63,7 @@ public class @MainMenuInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""65e63a65-96d9-40ae-87eb-8a3fdf4c6c03"",
-                    ""path"": ""<Keyboard>/backspace"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

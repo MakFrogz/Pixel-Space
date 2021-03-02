@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
         _highScoreResultText.text = PlayerPrefs.GetInt("highscore", 0).ToString();
         _scoreText.text = "Score: 0";
         _scoreResultText.text = "0";
-        _restartString = "";
+        _restartString = "Press  R  key  to  restart  level";
     }
 
     void Start()

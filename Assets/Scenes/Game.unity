@@ -362,13 +362,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 652206923855822940, guid: 08975021e951e1b43bffe559f443c4d0, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Keyboard
+      objectReference: {fileID: 0}
     - target: {fileID: 1341128281403828930, guid: 08975021e951e1b43bffe559f443c4d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1341128281403828930, guid: 08975021e951e1b43bffe559f443c4d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.17
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 1341128281403828930, guid: 08975021e951e1b43bffe559f443c4d0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -419,6 +423,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1561201111513639781, guid: 742d0c41247de9b459d0549e1297b0e5, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f2faf2284872226419f032d5525d967d, type: 3}
     - target: {fileID: 1561201112842976460, guid: 742d0c41247de9b459d0549e1297b0e5, type: 3}
       propertyPath: m_Name
       value: Audio Manager
@@ -484,6 +492,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1955006387635110699, guid: e458adeab716cb9438e0d2e7817a3185, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955006387635110868, guid: e458adeab716cb9438e0d2e7817a3185, type: 3}
+      propertyPath: orthographic size
+      value: 8.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1955006387833596138, guid: e458adeab716cb9438e0d2e7817a3185, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -541,6 +557,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5897633654064175201, guid: 7e2933922b38e6d45b8025508045fd1e, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 5897633654064175202, guid: 7e2933922b38e6d45b8025508045fd1e, type: 3}
       propertyPath: m_Name
       value: Background
@@ -604,39 +624,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: _timeBetweenAsteroids
-      value: 0.75
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: _destroyedEnemiesNumberForSpawnBoss
-      value: 1
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: _stepDestroyedEnemiesNumberForNextSpawnBoss
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: _spawnEnemyRateFromScore.m_Curve.Array.data[0].value
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: _spawnEnemyRateFromScore.m_Curve.Array.data[0].inSlope
-      value: -0.000022666667
+      value: -0.000024
       objectReference: {fileID: 0}
     - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: _spawnEnemyRateFromScore.m_Curve.Array.data[0].outSlope
-      value: -0.000022666667
+      value: -0.000024
       objectReference: {fileID: 0}
     - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: _spawnEnemyRateFromScore.m_Curve.Array.data[1].inSlope
-      value: -0.000022666667
+      value: -0.000024
       objectReference: {fileID: 0}
     - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: _spawnEnemyRateFromScore.m_Curve.Array.data[1].outSlope
-      value: -0.000022666667
+      value: -0.000024
       objectReference: {fileID: 0}
     - target: {fileID: 5977376027254897009, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: _spawnEnemyRateFromScore.m_Curve.Array.data[1].time
-      value: 75000
+      value: 50000
       objectReference: {fileID: 0}
     - target: {fileID: 5977376027254897022, guid: 3d09888e0d6227b4089d861a05c86d02, type: 3}
       propertyPath: m_LocalPosition.x
